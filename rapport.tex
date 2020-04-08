@@ -17,6 +17,8 @@
 \usepackage{natbib}
 \usepackage{pifont}
 \usepackage{tabto}
+\usepackage[all]{xy}
+\usepackage{nomencl}
 
 \theoremstyle{plain}% default
 \newtheorem{thm}{Théorème}[section]
@@ -48,6 +50,8 @@
 \newcommand{\ncref}[1]{\cref{#1} "\nameref{#1}"}
 \newcommand{\Ncref}[1]{\Cref{#1} \Nameref{#1}}
 
+\makenomenclature
+
 \begin{document}
 
 \title{Rapport de stage}
@@ -62,6 +66,11 @@
 
 \section{Introduction}
 \input{Introduction.tex}
+\newpage
+
+\section{Notations}
+\printnomenclature
+\input{notation.tex}
 \newpage
 
 \section{Théorie de Teichmuller}

@@ -1,0 +1,46 @@
+The aim of this part is to demonstrate the followoing statement
+
+\begin{thm}
+There is a measurable conjugacy $F$ between the earthquake flow $(\lambda , X) \mapsto (\lambda, E_{t \lambda}(X))$ on $\mathcal{ML}\times \mathcal{T}_g $ and the Teichmüller unipotent flow action of \[
+u_t = \begin{pmatrix} 1 & t \\ 0 & 1 \end{pmatrix}
+\]
+on the bundle $\mathcal{QD}$ of nonzero quadratic differentials over Teichmüller space $\mathcal{T}_g$ .
+\end{thm}
+
+\[
+\xymatrix{
+  \mathcal{ML}\times \mathcal{T}_g  \ar[r]^{E_t} \ar[d]_F  & \mathcal{ML}\times \mathcal{T}_g \ar[d]^F \\
+   \mathcal{QD} \ar[r]_{u_t} & \mathcal{QD}
+ }
+\]
+
+\subsection{Tightening map}%TODO vériphier l'orthographe
+
+A first coresspondance, found by Thurston, exist between measured foliation and measured lamination. We will mostly follow the paper of Levitt \ref{gkjen}.
+
+\begin{thm}
+Let $X$ be a closed orientable hyperbolic surface and $\mathcal{F}$ a foliation. There is a canonical geodesic lamination $\gamma(\mathcal{F})$ associated to $\mathcal{F}$. If $\mathcal{F}$ and $\mathcal{F}'$ are associated foliation then $\gamma(\mathcal{F})= \gamma(\mathcal{F}')$. In the opposite direction given a géodisic lamination $\gamma$, one can find a foliation $\mathcal{F}$ such that $\gamma(\mathcal{F})=\gamma$ and it's unique up to equivalence.
+\end{thm}
+%TODO mettre le recouverment universel
+\begin{dfnt}
+A \emph{tranverse curve} is a simple closed curve $C$ which is never tangent to $\mathcal{F}$ and contain no singularity of $\mathcal{F}$.
+\end{dfnt}
+
+\begin{rmq}
+Since $\mathcal{F}$ contain only saddle singularities, $C$ cannot be contractible, therefor $C$ is isotopic to a geodesic
+\end{rmq}
+
+\begin{lem}
+Let $h$ be a leaf of $\mathcal{\tilde{F}}$. Each end of $h$ converge to a point of $S$; the two point at infinity cannot be the same
+\end{lem}
+
+\subsection{Correspondance between foliations and quadratic differentials}
+
+For a quadratic differential $q$, one can define two measured foliations, the horizontal $h(q)$ and the vertical $v(q)$ corresponding in locate coordinate to $Re(z)$ and $Im(z)$. This give a map two the pair of foliation but it is not the subjectif, we should restrict ro the image.
+Define $\Delta = {(\alpha,\beta):i(\alpha,\gamma)=i(\beta,\gamma)=0, \text{ for some }\gamma \in \mathcal{MF}}$. $\Delta$ contain the diagonal $(\alpha,\alpha)$ and is kind of "fat" diagonal.
+
+\begin{lem}
+For any $q \in \mathcal{QD}$, $(h(q),v(q)) \notin \Delta$
+\end{lem}
+
+\subsection{Shear Cordinate}
