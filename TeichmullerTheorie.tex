@@ -118,12 +118,30 @@ We will define the main object of this paper, earthquake flow.
 \begin{dfnt}
 The earthquake flow is family of maps defined for $t \in \mathbb{R}$
 \[
-E_t: \mathcal{ML}\times \mathcal{T}_g \to \mathcal{ML}\times \mathcal{T}_g
-(\lambda,X) \mapsto (\lambda,E_{t\lambda}X)
+\begin{array}{crcl}
+
+E_t: & \mathcal{ML}\times \mathcal{T}_g & \to & \mathcal{ML}\times \mathcal{T}_g \\
+
+& (\lambda,X) & \mapsto & (\lambda,E_{t\lambda}X)
+
+\end{array}
 \]
 where $E_\lambda$ is first defined on multi-curves $\gamma =\sum c_i \gamma_i$ by adding $c_i$ to the twist coordinate of $\gamma_i$.
 As multi-curves are dense in lamination, we can show that it could be extend to the whole set $\mathcal{ML}$
 \end{dfnt}
+
+\begin{dfnt}
+The Weil-Peterson form is the the form \[
+\omega_{WP} = \sum d l_i \wedge d \tau_i
+\]
+Where $(l_1,...,\tau_1)$ are the Fenchel-Nielsen according to a pant decomposition.
+
+This give a measure $\mu_{WP}$.
+\end{dfnt}
+
+There is a finite measure $\nu_g$ in the Lebesgue measure class on $\mathcal{P}^1 \mathcal{M}_g$ which is invariant under the earthquake flow. This measure projects to the volume form given by $B(X) \times \mu_{WP}$ on $\mathcal{M}_g$, where \[
+B(X)=\mu_{Th}(\lambda \in \mathcal{ML}, l_\lambda(X) \leq 1)
+\]
 
 %TODO flot horocycle, tremblement de terre
 
@@ -163,3 +181,35 @@ X \mapsto (l_{\gamma_1}(X),...,l_{\gamma_{3g-3+n}}(X),\tau_{\gamma_1}(X),...,\ta
 \]
 This map is injective and is call the Fenchel-Nielsen cordinates.
 \end{dfnt}
+
+\subsection{The collaring theorem}
+
+We will give a lemma which is useful to determine if the minimal length of a geodesic crossing an other one.
+
+We define the function \[
+\eta(l)= \frac{1}{2} ln(\frac{cosh(l/2)+1}{cosh(l/2)-1})
+\]
+
+\begin{dfnt}
+LEt $\gamma$ be a simple closed geodesic of length $l$ on a hyperbolic surface $X$. If the $\delta$-neighborhood \[
+A_\delta(\gamma):={x \in X | d(x,\gamma) < \delta}
+\]
+is isometric to the $\delta$-neighbohood of the unique simple closed geodesic on the cylinder of modulus $\frac{\pi}{l}$, we say that $\gamma$ admit a $\delta$-collar
+, or that $A_\delta(\gamma)$ is the $\delta$-collar of $\gamma$.
+\end{dfnt}
+
+Then we have
+
+\begin{thm}
+Let $X$ be a complete hyperbolic surface, and let $\Gamma:={\gamma_1,...}$ be a collection of disjoint simple closed geodesic, each $\gamma_i$ of length $l_i$. Then $A_{\eta(l_i)}(\gamma_i)$ are collars around the $\gamma_i$, and they are disjoint.
+\end{thm}
+
+\begin{cor}
+Let $X$ be a hyperbolic surface, and $\gamma_1$, $\gamma_2$ two simple closed geodesics on $X$ of lengths $l_1$ and $l_2$. If $l_1 < 2 \eta(l_2)$, then either $\gamma_1=\gamma_2$ or $\gamma \cap \gamma_2 = \emptyset$
+\end{cor}
+
+\begin{cor}
+Let $X$ be a hyperbolic surface, and let $\gamma_1$, $\gamma_2$ be two simple closed geodesics with lengths $< ln(3+2 \sqrt{2})$. Then either $\gamma_1=\gamma_2$ or $\gamma_1 \cap \gamma_2 = \emptyset$.
+\end{cor}
+
+%TODO Mettre des figures et des démonstrations
