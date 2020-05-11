@@ -117,6 +117,7 @@ Nous notterons $\mathcal{Q}(x)$ l'espace de Banach des différentielles quadrati
 \subsection{Flow on Teichmüller space}
 
 We will define the main object of this paper, earthquake flow.
+
 \begin{dfnt}
 The earthquake flow is family of maps defined for $t \in \mathbb{R}$
 \[
@@ -132,6 +133,10 @@ where $E_\lambda$ is first defined on multi-curves $\gamma =\sum c_i \gamma_i$ b
 As multi-curves are dense in lamination, we can show that it could be extend to the whole set $\mathcal{ML}$
 \end{dfnt}
 
+Thurston show that given two point in the Teichmüller space, there is a lamination $\lambda$ such that the earthquake flow from one point with respect to $\lambda$ reach the other point.
+
+We can ask ourselves what is an invariant measure of this flow.
+
 \begin{dfnt}
 The Weil-Peterson form is the the form \[
 \omega_{WP} = \sum d l_i \wedge d \tau_i
@@ -145,7 +150,18 @@ There is a finite measure $\nu_g$ in the Lebesgue measure class on $\mathcal{P}^
 B(X)=\mu_{Th}(\lambda \in \mathcal{ML}, l_\lambda(X) \leq 1)
 \]
 
-%TODO flot horocycle, tremblement de terre
+%TODO flot horocycle
+An other flow is the horocycle flow.
+
+\begin{dfnt}
+The horocycle flow is a flow on the bundle of nonzero quadratic differential, $\mathcal{QD}$, of the Teichmuller space given by the unipotent action of \[
+u_t=\begin{pmatrix}
+1 & t \\
+0 & 1
+\end{pmatrix}
+\]
+\end{dfnt}
+
 
 \subsection{Decomposition of hyperbolic surface}
 
@@ -195,8 +211,8 @@ We define the function \[
 \]
 
 \begin{dfnt}
-LEt $\gamma$ be a simple closed geodesic of length $l$ on a hyperbolic surface $X$. If the $\delta$-neighborhood \[
-A_\delta(\gamma):={x \in X | d(x,\gamma) < \delta}
+Let $\gamma$ be a simple closed geodesic of length $l$ on a hyperbolic surface $X$. If the $\delta$-neighborhood \[
+A_\delta(\gamma):= \{ x \in X | d(x,\gamma) < \delta \}
 \]
 is isometric to the $\delta$-neighbohood of the unique simple closed geodesic on the cylinder of modulus $\frac{\pi}{l}$, we say that $\gamma$ admit a $\delta$-collar
 , or that $A_\delta(\gamma)$ is the $\delta$-collar of $\gamma$.

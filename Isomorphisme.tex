@@ -16,15 +16,22 @@ on the bundle $\mathcal{QD}$ of nonzero quadratic differentials over Teichmülle
 
 \subsection{Tightening map}%TODO vériphier l'orthographe
 
-A first coresspondance, found by Thurston, exist between measured foliation and measured lamination. We will mostly follow the paper of Levitt \ref{levittfoliations}.
+A first coresspondance, found by Thurston, exist between measured foliation and measured lamination. We will mostly follow the paper of Levitt \cite{levittfoliations}.
 
 \begin{dfnt}
-We say that two foliations are equivalent if we can pass from one to the other by Whithead moves or isotopy (homeomorphism isotopic to the identity).
+We say that two foliations are equivalent if we can pass from one to the other by Whithead (see definition below) moves or isotopy (homeomorphism isotopic to the identity).
 \end{dfnt}
+
+
+\begin{dfnt}
+Given a measure foliation, an critical segment $\gamma$ is an arc between two singularities along a leaf which is not a simple closed curve.
+There is a map $f$ homotopic to the identy that collapse $\gamma$ to a point $x$ and is identity outside a neighboorhood of $\gamma$ which contain no other singularity .  Doing so we reduce the number of singularities of the foliation and if the extremoties of $\gamma$ are singularities of order $k_1$ and $k_2$, $x$ is now a singularity of the new foliation of order $k_1+k_2-2$.
+\end{dfnt}
+
+
 \begin{center}
-\includegraphics[width=10cm]{Image/WhiteheadMove.png}
+\includegraphics[width=10cm]{Image/Whitehead-move-collapsing-or-creating-an-arc-joining-two-singular-points.png}
 \end{center}
-%TODO définir Whithead move et une image
 
 \begin{thm}
 Let $X$ be a closed orientable hyperbolic surface and $\mathcal{F}$ a foliation. There is a canonical geodesic lamination $\gamma(\mathcal{F})$ associated to $\mathcal{F}$. If $\mathcal{F}$ and $\mathcal{F}'$ are associated foliation then $\gamma(\mathcal{F})= \gamma(\mathcal{F}')$. In the opposite direction given a geodisic lamination $\gamma$, one can find a foliation $\mathcal{F}$ such that $\gamma(\mathcal{F})=\gamma$ and it's unique up to equivalence.
@@ -104,4 +111,85 @@ Define $\Delta = {(\alpha,\beta):i(\alpha,\gamma)=i(\beta,\gamma)=0, \text{ for 
 For any $q \in \mathcal{QD}$, $(h(q),v(q)) \notin \Delta$
 \end{lem}
 
+\begin{thm}
+The map $q \mapsto (h(q),v(q))$ define a homeomorphism $\mathcal{QD} \to \mathcal{MF} \times \mathcal{MF} \backslash \Delta$
+\end{thm}
+
 \subsection{Shear Cordinate}
+
+Finally there is a map that, given a hyperbolic structure $X$ and a lamination $\lambda$ create a measured foliation which is transverse to $\lambda$.
+
+For simplicity we will ask that $\lambda$ is a maximal lamination i.e. if $\tilde{\lambda}$ is the pre-image of $\lambda$ in the universal cover $\mathbb{D}$, $\mathbb{DD}\backslash \tilde{lambda}$ is made of ideal triangle. We will first work in this triangles minus a region on the center, then give a measure in this foliation, and finnally show that ot is a homeomorphism.
+
+So in one the ideal triangle, given two side we can draw an arc prependicular with the this two sides, which is the intersection of the ideal triangle with the circle tangent to the boundary of $\mathbb{D}$ in the common extremity the two arc chosen. Then by rescaling by a factor $r \in [0;1]$ and doing the same procedure for the two other pair we get a foliation in the ideal triangle minus a locus in the center.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=10cm]{Image/FoliationTri.jpg}
+\caption{Image from \cite{Martelli2016AnIT}}
+\end{figure}
+
+Then we can find a full foliation by pitching the resulting.
+
+We have a natural transverse measure to this foliation. For an arc in one ideal triangle of the lamination we can project it along the leaf of the foliation to asegment in the edge of the ideal triangle, the length of the arc will be the length of the segment. As the leaf are horocycle circle based on the same point, it will not depend of which side we choose to project. Then given an arbitrally arc we decompose it along the ideal triagle it meet.
+% TODO parler précedemment des groupes fushians
+
+We want to shwo that this construction is reversable, that is given $\mu \in \mathcal{MF}_\lambda $, the set of foliation transverse to the lamination, we can
+construct $X \in \mathcal{T}_g$ whose horocycle foliation is $\mu$.
+
+The idea is that, if we already know $X$, the lamination $\lambda$ can be lift to $\tilde{lambda}$ which is invariant of $\Gamma$ the fushian group of $X$. But we can built $\tilde{lambda}$ only with the information given by $\mu$.
+
+We will note $\tilde{\mu}$ the preimage of $\mu$ in $\mathbb{D}$. If we consider two triangles $T_1$ and $T_2$  that are complementary region of $\tilde{\lambda}$ and we suppose we take a segment $A$ in a leaf of $\tilde{\mu}$ that goes to an edge of $T_1$ to $T_2$. We name $v_1$ and $v_2$ the two vectors with footprint in the edge and tangent to them. Then there is a Moebuis transformation $S$ which take one to the other. With one more information, the "shear", we can place $T_2$ on $\mathbb{D}$, according to the position of $T_1$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{Image/Foliation.jpg}
+\caption{Image from \cite{wright2018mirzakhani}}
+\end{figure}
+
+Indeed given only a Moebuis transformation we still have a one parameter families of triangle $T_2$ with an edge generated by $v_2$. To fix this we trace two orthogeodesic comming from the vertex of the ideal triangles facing the considered edges and from the point of intersection in $T_1$ we follow a leaf of the foliation, then when we meet $T_2$ we have to move along the geodesic edge to find the other point of intersection. This lenght is the shear between $T_1$ and $T_2$
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{Image/Shear.jpg}
+\caption{Image from \cite{wright2018mirzakhani}}
+\end{figure}
+
+Let $I$ be the set of all triangles in $\mathbb{D}$ that $A$ meet. For each $i\in I$ we can define $v_i^+$ and $v_i^-$ the vectors tangent to the edge of the corresponding triangle at the intersection of the edges and $A$. Note that $I$ is a countable totally ordered but non well ordered set. So if we take $S_i$ the Moebuis transformation which take $v_i^-$ to $v_i^+$, we have to give a meaning of the expression \[
+\prod_{i\in I}S_i
+\]
+
+\begin{dfnt}
+Given a countable totally ordered set of indice $I$ and element $S_i$ in a Banach algebra, we say that $\prod_i S_i$ is well defined and equal to $S$ if for any increasing chain \[
+I_0 \subset I_1 \subset ... \subset I
+\]
+with $\cup_k I_k=I$ we have $lim_{k \to \infty} \prod_{i \in I_k}S_i =S $.
+\end{dfnt}
+
+\begin{lem}
+For element $s_i$ in a Banach algebra index by a countable totallyordered set, if $\sum \| s_i \| < \infty$, then $\prod(1+s_i)$ is well-defined.
+\end{lem}
+\begin{proof}
+For $1 \leq m \leq n$, we have \[
+\| \prod_{i=1}^n(1+s_i)-\prod_{i=1,i \neq m}^n (1+s_i) \| \leq \|s_m \| \| \prod_{i=1,i \neq m}^n (1+s_i) \| \leq \|s_m\| \prod_{i=1}^n (1+\|s_i\|)
+\]
+Or with the assumption $\sum \| s_i \| < \infty$ we have that $\prod(1+\|s_i\|) \leq C < \infty$, so removing or adding $1+s_m$ produce a change bound by $\|s_m\| C$.
+\end{proof}
+
+Now we want to apply this lemma to $S_i - Id$, with $Id$ the identity matrice.
+
+\begin{lem}
+For the previous $S_i$, if we note $s_i=S_i - Id$ we have $\sum \| s_i \| < \infty$.
+\end{lem}
+
+\begin{proof}
+Each $S_i$ is conjugate to a horocycle transformation of time one. The conjugacy is made by a geodesic flow along the edges of the triangle. We can compute \[
+\begin{pmatrix} e^{-t/2} & 0 \\ 0 & e^{t/2} \end{pmatrix} = \begin{pmatrix} 1 & 1 \\ 0 & 1 \end{pmatrix} \begin{pmatrix} e^{t/2} & 0 \\ 0 & e^{-t/2} \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}+ \begin{pmatrix} 0 & e^{-t} \\ 0 & 0 \end{pmatrix}
+\]
+So the norm of $s_i$ is inversally corrolated to the amount of geodesic flow used in the conjugaison.
+Now we can parttion the indice set $I$ into finely many subset $(I_k)$ according to to which spike of the lamination the arc of $A$ cross.
+Then for a spike the sum of $\|s_i \|$ where $i \in I_k$ is finite, indeed the distance between two neighbooring crossing is bound below by a constant and so the amount of time we should do the geodesic flow increase at most linerally and finnaly the norm of the $s_i$ should decraese geometrically.
+\end{proof}
+
+So we can conclude that there is an unique Moebuis transformation $S$ equal to the meaningfull expression $\prod_i S_i$.
