@@ -150,8 +150,25 @@ There is a finite measure $\nu_g$ in the Lebesgue measure class on $\mathcal{P}^
 B(X)=\mu_{Th}(\lambda \in \mathcal{ML}, l_\lambda(X) \leq 1)
 \]
 
-%TODO flot horocycle
-An other flow is the horocycle flow.
+There are two other important flows, the geodesic flow and the horocyclic flow.
+First there is a natural homeomorphism between $T^1 \mathbb{H}  \simeq PSL_2(\mathbb{R})$, since $PSL_2(\mathbb{R})$ act simply trasnsitively on it. This morphism can be choosen up to a conjugaison via an other element of $PSL_2(\mathbb{R})$. We we will be interested in a special kind of subgroup.
+
+\begin{dfnt}
+A fuchsian group $\Gamma$ is a finitely generated and discrete subgroup of $PSL_2(\mathbb{R})$. Then $\Gamma$ act discontinuously on $\mathbb{H}$.
+\end{dfnt}
+
+Then a Hyperbolic surface can be represented as $PSL_2(\mathbb{R})/ \Gamma$. If $U$ is a one parameter subgroup of $PSL_2{\mathbb{R}}$ it act on the quotient.
+
+There are two important exemple:
+
+\begin{dfnt}
+The geodesic flow is a flow on the Teichmuller space given by the action of the diagonal matrices\[
+u_t=\begin{pmatrix}
+e^t & 0 \\
+0 & e^{-t}
+\end{pmatrix}
+\]
+\end{dfnt}
 
 \begin{dfnt}
 The horocycle flow is a flow on the bundle of nonzero quadratic differential, $\mathcal{QD}$, of the Teichmuller space given by the unipotent action of \[
@@ -162,6 +179,28 @@ u_t=\begin{pmatrix}
 \]
 \end{dfnt}
 
+The geodesic flow is also the flow that we obtain by following geodesic line on $\mathbb{H}$ and the horocycle is the flow we obtain by following curves which are everywhere orthogonal to the geodesic, which is the horizotal line and the circle tangent to the real line.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{Image/FlowPaint.png}
+\caption{Representation of the horocycle flow, in green, and the geodesic flow, in red}
+\end{figure}
+
+
+An important relation is how this two flows interact between each other \[
+\begin{pmatrix} e^t & 0 \\ 0 & e^{-t}\end{pmatrix} u_t=\begin{pmatrix} 1 & s \\ 0 & 1 \end{pmatrix} \begin{pmatrix} e^{-t} & 0 \\ 0 & e^{t}\end{pmatrix}=
+\begin{pmatrix} 1 & s e^{2t} \\ 0 & 1\end{pmatrix}
+\]
+So the the conjugaison of the horocyclic flow by the geodesic one is still the horocyclic flow.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{Image/Commutatoin.png}
+\caption{The conjugaison of the horocycle flow by the geodesic one.}
+\end{figure}
+
+%TODO faire l'exercice du pdf sur les flots.
 
 \subsection{Decomposition of hyperbolic surface}
 

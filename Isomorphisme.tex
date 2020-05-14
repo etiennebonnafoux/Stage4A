@@ -102,6 +102,21 @@ Finally if $p(h)$ is compact then $p(h_n)$ spirals toward it for large $n$, ther
 %TODO finir la preuve : réciproque
 \end{proof}
 
+Now we want to exhib an inverse construction which take a lamination $\lambda$ and give a foliation $\mu$. To do this we still consider $\tilde{\lambda}$ in the universal cover. We will suppose that every complementary region is a ideal polygon.
+%TODO expliquer pourquoi cette situation est générique
+
+We can built a skeleton that it compose of edge between vertex and a choosen point in the center. After building the skeleton for every polygon we fill the complementary region which will be between four edge by line between the two vertex.
+
+This map is often called the "collapsing" map and its inverse the "tightening" map.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{Image/CollapsingTightening.jpg}
+\caption{In red the skeleton of the ideal triangle in blue, Image from \cite{wright2018mirzakhani}}
+\end{figure}
+
+The measure we put on this foliation is uniform on every region between four edges of the skeleton.
+%TODO ca semble foireux
 \subsection{Correspondance between foliations and quadratic differentials}
 
 For a quadratic differential $q$, one can define two measured foliations, the horizontal $h(q)$ and the vertical $v(q)$ corresponding in locate coordinate to $Re(z)$ and $Im(z)$. This give a map two the pair of foliation but it is not the subjectif, we should restrict ro the image.
@@ -119,7 +134,7 @@ The map $q \mapsto (h(q),v(q))$ define a homeomorphism $\mathcal{QD} \to \mathca
 
 Finally there is a map that, given a hyperbolic structure $X$ and a lamination $\lambda$ create a measured foliation which is transverse to $\lambda$.
 
-For simplicity we will ask that $\lambda$ is a maximal lamination i.e. if $\tilde{\lambda}$ is the pre-image of $\lambda$ in the universal cover $\mathbb{D}$, $\mathbb{DD}\backslash \tilde{lambda}$ is made of ideal triangle. We will first work in this triangles minus a region on the center, then give a measure in this foliation, and finnally show that ot is a homeomorphism.
+For simplicity we will ask that $\lambda$ is a maximal lamination i.e. if $\tilde{\lambda}$ is the pre-image of $\lambda$ in the universal cover $\mathbb{D}$, $\mathbb{D}\backslash \tilde{\lambda}$ is made of ideal triangle. We will first work in this triangles minus a region on the center, then give a measure in this foliation, and finnally show that ot is a homeomorphism.
 
 So in one the ideal triangle, given two side we can draw an arc prependicular with the this two sides, which is the intersection of the ideal triangle with the circle tangent to the boundary of $\mathbb{D}$ in the common extremity the two arc chosen. Then by rescaling by a factor $r \in [0;1]$ and doing the same procedure for the two other pair we get a foliation in the ideal triangle minus a locus in the center.
 
@@ -133,7 +148,6 @@ So in one the ideal triangle, given two side we can draw an arc prependicular wi
 Then we can find a full foliation by pitching the resulting.
 
 We have a natural transverse measure to this foliation. For an arc in one ideal triangle of the lamination we can project it along the leaf of the foliation to asegment in the edge of the ideal triangle, the length of the arc will be the length of the segment. As the leaf are horocycle circle based on the same point, it will not depend of which side we choose to project. Then given an arbitrally arc we decompose it along the ideal triagle it meet.
-% TODO parler précedemment des groupes fushians
 
 We want to shwo that this construction is reversable, that is given $\mu \in \mathcal{MF}_\lambda $, the set of foliation transverse to the lamination, we can
 construct $X \in \mathcal{T}_g$ whose horocycle foliation is $\mu$.
@@ -193,3 +207,5 @@ Then for a spike the sum of $\|s_i \|$ where $i \in I_k$ is finite, indeed the d
 \end{proof}
 
 So we can conclude that there is an unique Moebuis transformation $S$ equal to the meaningfull expression $\prod_i S_i$.
+
+Now we can conclude the proof. There exist, without any hyperbolic structure $X$  topological classes for $\tilde{\mu}$ and $\tilde{\lambda}$. We choose one arbitrary ideal triangle $T_1$ in the lamination. For every other triangle $T_2$, the Moeubuis transformation and the shear are data that can be compute only using the transverse measure of $\tilde{mu}$. So we can place $T_2$, and the other triangle. The closure of this set give the lamination $\tilde{\lambda}$. $\tilde{\lambda}$ will be preserve by a fushian group $\Gamma$ and we will have $X=\mathbb{D}  / \Gamma$.
