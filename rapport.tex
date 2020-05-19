@@ -8,7 +8,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{natbib}
-\usepackage[french]{babel}
+\usepackage[english]{babel}
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{color}
@@ -19,21 +19,22 @@
 \usepackage{tabto}
 \usepackage[all]{xy}
 \usepackage{nomencl}
+\usepackage{wrapfig}
 
 \theoremstyle{plain}% default
-\newtheorem{thm}{Théorème}[section]
-\newtheorem{lem}[thm]{Lemme}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem*{cor}{Corollaire}
 \theoremstyle{definition}
-\newtheorem{dfnt}{Définition}[section]
+\newtheorem{dfnt}{Definition}[section]
 \newtheorem{exmp}{Exemple}[section]
 \newtheorem{xca}[exmp]{Exercice}
 \theoremstyle{remark}
-\newtheorem*{rmq}{Remarque}
+\newtheorem*{rmq}{Remark}
 \newtheorem*{note}{Note}
 \newtheorem{case}{Case}
-\newtheorem{hyp}{Hypothèse}
+\newtheorem{hyp}{Hypothese}
 
 \crefname{thm}{theorem}{theorems}
 \crefname{lem}{lemme}{lemmes}
@@ -45,19 +46,43 @@
 \crefname{rmq}{remarque}{remarques}
 \crefname{note}{note}{notes}
 \crefname{case}{case}{cases}
-\crefname{hyp}{hypothèse}{hypothèse}
+\crefname{hyp}{hypothese}{hypothese}
 
 \newcommand{\ncref}[1]{\cref{#1} "\nameref{#1}"}
 \newcommand{\Ncref}[1]{\Cref{#1} \Nameref{#1}}
 
-\makenomenclature
+%\makenomenclature
 
 \begin{document}
 
-\title{Rapport de stage}
-%\subtitle{Probespoke}
-\author{Etienne Bonnafoux}
-\date{De juin a aout 2018}
+%\title{On Teichmuller theory and Thurston earthquake flow}
+%\author{Etienne Bonnafoux}
+%\subtitle{A closer look at the expenses}
+%\date{Mars-Juny 2020}
+
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.15\textwidth]{Image/Sorbonne.png}\par\vspace{1cm}
+	{\scshape\LARGE Sorbonne Université \par}
+	\vspace{1cm}
+	{\scshape\Large Master Thesis\par}
+	\vspace{1.5cm}
+	{\huge\bfseries Teichmuller theory and Thurston Earthquake flow\par}
+	\vspace{2cm}
+	{\Large\itshape Bonnafoux Etienne\par}
+	\vfill
+	supervised by\par
+	Carlos \textsc{Matheus}
+
+	\vfill
+
+% Bottom of the page
+	{\large \today\par}
+\end{titlepage}
+
+\newpage
+
+%\maketitle
 
 \newpage
 
@@ -73,19 +98,19 @@
 \input{notation.tex}
 \newpage
 
-\section{Théorie de Teichmuller}
+\section{Teichmuller Theory}
 \input{TeichmullerTheorie.tex}
 \newpage
 
-\section{Isomorphisme de Mirzhakani}
+\section{Isomorphisme of Mirzhakani}
 \input{Isomorphisme.tex}
 \newpage
 
-\section{Vitesse de mélange}
+\section{Mixing rate}
 \input{VitesseMelange.tex}
 \newpage
 
-\section{Example du tore à un trou}
+\section{Example of the once ponctured torus}
 \input{Tore.tex}
 \newpage
 
