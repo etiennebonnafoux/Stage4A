@@ -1,0 +1,106 @@
+We will first give the behavior of two flows we described before.
+
+\begin{thm}
+The ergodic flow and the horocycle flow are mixing.
+\end{thm}
+
+\cite{Mcmullen1998HyperbolicM}
+
+\begin{proof}
+The step will be in four step, first we will show that the ergodic flow is ergodic, the horocyclic flow is ergodic, the ergodic flow is mixing, finally the horocycle flow is mixing.
+
+\emph{Ergodicity flow is ergodic}
+
+We will look at the time average of a function $f \in L^2$ which is continuous and compactly support. It will be sufficient since this space is dense \[
+F(x) = lim_{T \to \infty} \frac{1}{T} \int_0^T f(g_t x)dt
+\]
+We want to show that $F$ is almost everywhere constant.
+
+Since $F$ depend only of the geodesic $\gamma(a,b)$ which pass at $x$, if $a,b \in S_\infty$ are the two endpoints of $\gamma$, we have $F(a,b)$.
+Then as two geodesic with the same forward endpoint are asymptotic, $F$ is a quantity that depend only of asymptotic average, we have that $F$ do not depend of $a$.
+But we can reverse the argument to show that if we consider the inverse geodesic, $t \to \infty$, we have that $F$ is also independent of $b$. Hence $F$ is constant almost everywhere and the geodesic flow is ergodic.
+
+\emph{Ergodicity of the horocycle flow}
+
+Now if we take $f \in L^2(X)$ a function invariant under the horocycle flow and of mean zero, we want to show that $f=0$ almost everywhere.
+Let $G^t$, $H^s$ and $E^r$ correspond to the operators of the different flows. We have the relation \[
+H^s=E^r G^t E^{\pi+r}
+\]
+where $r \to 0$ as $t \to \infty$. Since $H^s f=f$,we have for any $T>0$,\[
+f=\frac{1}{T} \int_0^T E^r G^t E^{\pi+r} f dt
+\]
+Thus for every $g\ in L^2(X)$ we have \[
+<g,f> = \int_X g \frac{1}{T} \int_0^T E^r G^t E^{\pi+r}
+\]
+As $r \to 0$ then $t \to \infty$ we can show by controlling the difference that \[
+<g,f> = lim_{t \to \infty} \int_X g \frac{1}{T} \int_0^T G^t E^{\pi} f dt
+\]
+Then as we have shown that the geodesic flow is ergodic, we have by Von Neumann ergodic theorem\[
+<g,f> = <g,\int_X E^{\pi} f> =0
+\]
+This conclude the proof that the horocycle flow is ergodic.
+
+\emph{Mixing of the geodesic flow}
+
+We have the relation \[
+h^s g^t =g^t h^{s exp(2t)}
+\]
+Let us take $f_0,f_1 \in C_0(X)$,
+we have for small $s$ %TODO rendre ca plus rigoureux
+\[
+<f_0,g^t f_1 > \equiv <h^{-s} f_0,g^t f_1 >=<f_0 , h^s g^t f_1 >
+= <f_0 , g^t h^{s exp(2t)} f_1 > = <g^{-t} f_0 , h^{s exp(2t)}f_1>
+\]
+Now we have for small $s$, \[
+h^{S exp(2t)}f_1 \equiv \frac{1}{S} \int_0^S h^{exp(2t)s} f_1 ds =F_t
+\]
+and for large t, as the horoclic flow is ergodic \[
+F_t = \frac{1}{S} \int_0^S h^{exp(2t)s} f_1 ds \equiv \int_X f_1 = <f_1 , 1 >
+\]
+So we have \[
+<f_0, g^t f_1 > \equiv <g^{-t} f_0, F_t > \equiv <g^{-t} f_0 ,1 ><f_1,1> = <f_0,1><f_1,1>
+\]
+Which is the mixing of the geodesic flow.
+
+\emph{Mixing of the horocyclic flow}
+
+We use again the relation $h^s = e^r g^t e^{\pi + r}$. \[
+<h^s f_0 , f_1 > = < g^t  e^{\pi+r} f_0, e^{-r} f_1> \equiv <g^t e^{\pi} f_0, f_1
+\]
+for $t$ large (and so $r$ small). By the mixing propity of the geodesic flow, this quantity converges to $<f_0,1><f_1,1>$, and the horocyclic flow is mixing.
+
+\end{proof}
+
+
+Then we have this elementary corrolary
+
+\begin{cor}
+The Earthquake flow is also ergodic.
+\end{cor}
+
+\begin{proof}
+With the conjugacie of Mirzharani, the earthquake flow is conjugated to the horocycle flow which is ergodic. This propriety is transmitted.
+\end{proof}
+
+We will now give an introduction to specral gap theory which permit to estimate the rate of mixing of somme flow.
+
+\begin{dfnt}
+Let $G$ be a locally compact $\sigma$-compact group. A continuous unitary
+%NB unitary?
+ representation of $G$ is said to have \emph{almost invariant vectors}
+ %TODO faire ca à toute les def
+ if for every $\epsilon > 0$ and for every compact subset $K \subset G$, there exists a unit vector $V$ such that $\|g*v-v\| < \epsilon$ for all $g \in K$.
+
+ A unitary action which does not have almost invariant vectors is said to be \emph{isolated from trivial representation}.
+
+ If $G$ is a semi-simple Lie group, a representation which is isolated from trivial representation is alos said to have a spectral gap.
+\end{dfnt}
+
+\begin{prop}
+Let consider a representation of $SL(2,\mathbb{R})$ by a measure presearving action of automorphisms of a probability space. Let $\rho$ be the repesentation associate on $H$ the space of the $L^2$ function with zero averages. Assume there is $\delta \in ]0;1[$ and a dense subset of the subspace of $SO(2,\mathbb{R})$-invariant function $H' \subset H$ consisting of functions $\phi$ for which the correlations $<\phi, \rho(g_t) \time \phi>$, $g_t=\begin{pmatrix} e^t & 0 \\ 0 & e^{-t} \end{pmatrix} $
+, decay like $O(e^{- \delta t})$. Then $\rho$ is isolated from the trivial representation.
+%groupe orthogonal spécial
+\cite{2005math.....11614A}
+\end{prop}
+
+\cite{ratner_1987}

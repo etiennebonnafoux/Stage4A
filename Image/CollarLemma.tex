@@ -1,0 +1,93 @@
+
+%%-----------------------------
+%%      the top matter
+%%-----------------------------
+\title{Figures}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}[scale=1,cap=round]
+\tkzInit[xmin=-4, xmax=4, ymin=-4, ymax=4]
+\tkzClip
+%Draw circle
+\tkzDefPoint(0,0){C} %define center
+\tkzDefPoint(0,4){N} %define "north"
+\tkzDefPoint(0,3){NC}
+\tkzDefPoint(0,-4){S} %define "south"
+\tkzDefPoint(0,-2){SC}
+\tkzDrawCircle[thick](C,N){circleC} %circle centered in C passing through N, named circleC
+\draw[thick] (S) -- (N); %Lines between S and N
+
+%%% North semi-arc
+
+\tkzDefPointWith[orthogonal](NC,C) \tkzGetPoint{ortC_NC} %One point that is on the orthogonal of NC-C (passing by NC) called ortC_NC
+
+\tkzInterLC(NC,ortC_NC)(C,N) \tkzGetPoints{N1}{N2} %The intersection between the line NC, ortC_NC and the circle centered in C passing by N, the two points are called N1 and N2
+
+\tkzDefPointWith[orthogonal](N1,C) \tkzGetPoint{ortC_N1} %One point that is on the orthogonal of N1-C (passing by N1) called ortC_N1
+\tkzDefPointWith[orthogonal](N2,C) \tkzGetPoint{ortC_N2} %One point that is on the orthogonal of N2-C (passing by N2) called ortC_N2
+
+\tkzInterLL(N1,ortC_N1)(N2,ortC_N2) \tkzGetPoint{CN} %The intersection between the line N1-ortC_N1 and the  line N1-ortC_N1, the points is called CN
+
+\begin{scope}
+\tkzInit[xmin=0, xmax=4]
+\tkzClip
+\tkzClipCircle(C,N) %only what is inside the circle centered in C passing through N
+\tkzDrawCircle[thick](CN,N1){circleN} %circle centered in CN passing through N1, named circleN
+\end{scope}
+%\tkzMarkRightAngle[size=.2](C,N2,CN)
+
+
+%%% South semi-arc
+
+\tkzDefPointWith[orthogonal](SC,C) \tkzGetPoint{ortC_SC} %One point that is on the orthogonal of SC-C (passing by SC) called ortC_SC
+
+
+\tkzInterLC(SC,ortC_SC)(C,S) \tkzGetPoints{S1}{S2} %The intersection between the line SC, ortC_SC and the circle centered in C passing by S, the two points are called S1 and S2
+
+
+\tkzDefPointWith[orthogonal](S1,C) \tkzGetPoint{ortC_S1} %One point that is on the orthogonal of S1-C (passing by S1) called ortC_S1
+\tkzDefPointWith[orthogonal](S2,C) \tkzGetPoint{ortC_S2} %One point that is on the orthogonal of S2-C (passing by N2) called ortC_S2
+
+\tkzInterLL(S1,ortC_S1)(S2,ortC_S2) \tkzGetPoint{CS} %The intersection between the line S1-ortC_S1 and the  line S1-ortC_S1, the points is called CS
+
+\begin{scope}
+\tkzInit[xmin=0, xmax=4]
+\tkzClip
+\tkzClipCircle(C,S) %only what is inside the circle centered in C passing through S
+\tkzDrawCircle[thick](CS,S1){circleS} %circle centered in CS passing through S1, named circleS
+\end{scope}
+%\tkzMarkRightAngle[size=.2](C,S1,CS)
+
+
+%%% East semi arc
+\tkzInterLL(S1,ortC_S1)(N2,ortC_N2) \tkzGetPoint{CE} %The intersection between the line S1-ortC_S1 and the  line S1-ortC_S1, the points is called CS
+\begin{scope}
+\tkzClipCircle(C,S) %only what is inside the circle centered in C passing through S
+\tkzDrawCircle[thick,green](CE,S1){circleE} %circle centered in CN passing through N1, named circleE
+\end{scope}
+\tkzMarkRightAngle[size=.2](C,N2,CE)
+\tkzMarkRightAngle[size=.2](C,S1,CE)
+
+
+\tkzDefLine[orthogonal=through CE](N,S)\tkzGetPoint{X}
+\tkzInterLC(CE,X)(CE,S1) \tkzGetFirstPoint{M}
+\tkzInterLL(M,X)(C,N) \tkzGetPoint{CM} %The intersection between the line SC, ortC_SC and the circle centered in C passing by S, the two points are called S1 and S2
+
+\draw[>=triangle 45, <->, thick] (CM) -- node[below] {$\eta(\ell)$} (M);
+
+\tkzInterLC(N,S)(CN,N1) \tkzGetSecondPoint{NM}
+\tkzInterLC(N,S)(CS,S1) \tkzGetFirstPoint{SM}
+\draw[>=triangle 45, <->, red, thick] (NM) -- node[left] {$\ell$} (SM);
+
+% Mark right angles with vertical
+\tkzDefPointWith[orthogonal](SM,SC)\tkzGetPoint{SME}
+\tkzMarkRightAngle[size=.2](CS,SM,SME)
+\tkzDefPointWith[orthogonal,K=-1](NM,NC)\tkzGetPoint{NME}
+\tkzMarkRightAngle[size=.2](CN,NM,NME)
+
+%\tkzDrawPoints(C, N, S, S1, N1, S2, N2, X, M, CM)
+%\tkzLabelPoints[below](C, N, S, S1, N1, S2, N2, X, M, CM)
+\end{tikzpicture}
+\caption{In red the segment of length $l$ and in green the geodesic whose endpoint are orthogonal projection of the end of the segment.}
+\end{figure}

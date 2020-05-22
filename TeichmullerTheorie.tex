@@ -15,6 +15,18 @@ If $g \geq 2$, for every closed curve $\alpha$ of $S$, there is only one closed 
 This give a map $L: T_g \to \mathbb{R}^{\mathbf{S}}$, where $\mathbf{S}$ is the set of all simple closed curve of a given surface. We can ask if this map si injective, i.e. that a geometry is given by the length of the set of simple closed curve. The answer is yes and more precisely one can choose only $9g-9+3n$ curve so that this map is injective \cite{farb2011primer} Theorem 10.7.  This give the intuition that Teichmuller space can be only by using a finite set of parameter. We will see after that other coordinates which have nice propeties for other utilisations.
 %TODO mettre la peruve
 
+
+An other curious but important fact about simple closed geodesic is that the sum of a function of theirs length is equal to a constant which does not depend on the genus or the geometry of the surface.
+
+\begin{thm}
+Let $X$ be a hyperbolic surface then \[
+\sum_{\gamma} \frac{1}{1+e^{l_{\gamma}(X)}}=\frac{1}{2}
+\]
+Where the sum is taken other all simple closed geodesic.
+\end{thm}
+
+This theorem was prove by McShane and bear his name \cite{Mcshane95simplegeodesics}. A good introduction with a proof using measure on tree can be found in this paper \cite{labourie:hal-01654564}.
+
 \begin{dfnt}{Modular Space}
 The modular group is the group of homeomorphism of $S$ which respect orientation quotiented by the one isotopic to the identity map. We will call this group $Mod_g$
 It act discretly on the Teichmuller space $T_g$ and the quotient is called the moduli space and is written $\mathcal{M}_g$.
@@ -78,12 +90,16 @@ Let $\mathcal{M}_\infty$ be the space of unordered pairs of distinct points in $
 \]
 Let $G$ be a discret torsion-free group in $PSL(2,\mathbb{R})$ such that $\mathbb{H}//G=S$ is a hyperbolic surface.
 A geodesic current $\mu$ on $S$ is a $G$-invariant Radon measure on $\mathcal{M}_\infty$.
-We will note $\mathcal{GC}(S)$ the space of geodesic currents.
+We will note $\mathcal{GC}(S)$ the space of geodesic currents, see \cite{kapovich2009hyperbolic}
 \end{dfnt}
 
 \begin{rmq}
 $\mathcal{GC}(S)$ have a natural topology which is the weak $*$ convergence on continous functions.
 \end{rmq}
+
+\begin{exmp}
+Let $g \in G$ be an element that represent a simple closed geodesic on the surface $S$. The $G$-orbit of the fix point of $g$ is a discret set on which we can put diracs measure. This link the geodesic currents to the measured lamination.
+\end{exmp}
 
 \begin{rmq}
 A mullticurve is a formel sum of geodesics $\gamma = \sum a_i \gamma_i$. The space of lamination is in some aspect the closure of the set of all multicurve
@@ -99,7 +115,7 @@ Finally if we take the mass of the total space $\mathcal{IM}^2_\infty // G$, the
 \[
 i: \mathcal{GC}(S) \times \mathcal{GC}(S) \to \mathbb{R}_+
 \]
-is continuous and bilinear
+is continuous and bilinear \cite{Bonahon1988}.
 \end{prop}
 
 \begin{rmq}
@@ -111,8 +127,8 @@ Actually, one can define intersection in this way, first on simple closed geodes
 The topology on $\mathcal{ML}$ is the weakest that make $i(.,.)$ a continous function.
 \end{rmq}
 
-\begin{dfnt}{Différentielle quadratique}
-Une différentielle quadratique est une section du carré de l'espace tangeant canonique à X. Il s'écrit localement comme $\phi= \phi(z) dz^2$
+\begin{dfnt}
+A quadratic differential is a section of the square of the tangent space to $X$. It is locally as $\phi= \phi(z) dz^2$.
 \end{dfnt}
 
 \begin{rmq}
@@ -120,10 +136,17 @@ Si $\phi(p) \neq 0$ on peut trouver une carte contenant $p$ dans laquel $\phi = 
 Ainsi $\phi$ détermine une métrique plate sur $X$ et un feuilletage $\mathcal{F}$ correspondant aux lignes horizontales.
 \end{rmq}
 
-Une différentielle quadratique est dite intégrable si \[
+\begin{rmq}
+If $\phi(p) \neq 0$ we can find a map including $p$ in which $\phi = dz^2$.
+Hence $\phi$ determine a flat metric on $X$ and a foliation $\mathcal{F}$ corresponding to horizontal lignes.
+\end{rmq}
+
+%TODO revoir tout ca
+
+A quadratic differential is said to be integral if\[
  \| \phi \| = \int_X | \phi | < \infty
 \]
-Nous notterons $\mathcal{Q}(x)$ l'espace de Banach des différentielles quadratiques intégrables.
+We will write $\mathcal{Q}(x)$ the Banach space of integral quadratic differentials.
 
 \subsection{Flow on Teichmüller space}
 
@@ -252,6 +275,7 @@ A hyperbolic geometric exercice show that a hexagone which side are geodesics an
 \begin{rmq}
 The pair of pant is uniquely determined by the lenght of the three boundarie geodesics.
 \end{rmq}
+%TODO mettre la preuve
 
 \begin{rmq}
 The lenght of one or more geodesic can go to zero and the boundaries become a ponctured.
@@ -291,11 +315,15 @@ We will now give a useful tool to give necessary condition on length of two inte
 
 The collar function $\eta:]0; \infty[ \to ]0;\infty[$ is defined as follow. We draw a segment of lenght $l > 0$ on a geodesic $\gamma$, then we project perpendicullary to the geodesic the end of this segment to infinity and draw the geodesic $\delta$ which have this endpoint. So we have $\eta(l)=d(\gamma,\delta)$.
 
-\begin{figure}
-\centering
-\includegraphics[width=6cm]{Image/CollarFunction.png}
-\caption{In red the segment on $\gamma$, in green $\delta$. $\eta(l)$ is the length of the black segment between them.}
-\end{figure}
+%\begin{figure}
+%\centering
+%\includegraphics[width=6cm]{Image/CollarFunction.png}
+%\caption{In red the segment on $\gamma$, in green $\delta$. $\eta(l)$ is the length of the black segment between them.}
+%\end{figure}
+
+\input{Image/CollarLemma.tex}
+
+
 
 It is an exercice to show that:\[
 \eta(l)= \frac{1}{2} ln(\frac{cosh(l/2)+1}{cosh(l/2)-1})
