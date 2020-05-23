@@ -1,6 +1,7 @@
 The aim of this part is to demonstrate the followoing statement
 
 \begin{thm}
+\label{MirThm}
 There is a measurable conjugacy $F$ between the earthquake flow $(\lambda , X) \mapsto (\lambda, E_{t \lambda}(X))$ on $\mathcal{ML}\times \mathcal{T}_g $ and the Teichmüller unipotent flow action of \[
 u_t = \begin{pmatrix} 1 & t \\ 0 & 1 \end{pmatrix}
 \]
@@ -210,3 +211,51 @@ Then for a spike the sum of $\|s_i \|$ where $i \in I_k$ is finite, indeed the d
 So we can conclude that there is an unique Moebuis transformation $S$ equal to the meaningfull expression $\prod_i S_i$.
 
 Now we can conclude the proof. There exist, without any hyperbolic structure $X$  topological classes for $\tilde{\mu}$ and $\tilde{\lambda}$. We choose one arbitrary ideal triangle $T_1$ in the lamination. For every other triangle $T_2$, the Moeubuis transformation and the shear are data that can be compute only using the transverse measure of $\tilde{mu}$. So we can place $T_2$, and the other triangle. The closure of this set give the lamination $\tilde{\lambda}$. $\tilde{\lambda}$ will be preserve by a fushian group $\Gamma$ and we will have $X=\mathbb{D}  / \Gamma$.
+
+\subsection{Conjugaison between the horocyclic flow and the earthquake flow}
+
+We now have to prove that the map between $\mathcal{ML}\times \mathcal{T}_g $ and $\mathcal{QD}$ conjugate the earthquake flow and the horocyclic flow.
+
+\begin{lem}\label{LemDer}
+Denote by $Shear_X(T_1,T_2)$ the shear for two triangles joined by an arc $A$ of the horocyclic foliation on the hyperbolic surface $X$. Then \[
+Shear_{E_{t \lambda}(X)}(T_1 ,T_2)= Shear_X(T_1,T_2)+t \lambda(A)
+\]
+where $\lambda(A)$ denote the transverse measure of $A$ and $t$ is sufficiently small.
+\end{lem}
+
+\begin{proof}
+$T_1$ and $T_2$ are separeted by infinitely many leaves of $\tilde{\lambda}$. We want to undersant how $T_2$ moved relatively to $T_1$ by the action of the earthquake $E_{t \lambda}$.
+We can approximate the measured lamination between the two triangles by a discrete one.
+If the earthquake along a leaf of $\gamma$ of $\tilde{\lambda}$ between $T_1$ and $T_2$ by an amount $t$, then this changes the shear coordinate between $T_1$ and $T_2$ by $t$. Indeed each arc of the horocycle foliation which have endpoint on $\gamma$ see their endpoints translated by $t$.
+Similary if the earthquake moves finitelymany leave of $\lambda$ with measure $a_i$, the shear changes by precisely $t \sum a_i$. So taking a limit, we have the lemma for an arbitrary measured foliation.
+\end{proof}
+
+We will now show that the Mirzakhani's map conjugates the earthquake flow to the horocyclic flow. Let $\mathcal{ML}_0$ denote the set of maximal lamination and $\mathcal{QD}_0$ the locus of quadratic differentials with simple zeros and no horizontal saddle connection. We begin with an easy lemma.
+
+\begin{lem}
+An arc joining two singularities of a quadratic differential have in is isotopy class a path made of horizontal and vertical arc between two singularities of the quadratic differential.
+\end{lem}
+
+\begin{cor}
+Suppose$q_t$ is a path in the space of quadratic differential such that for every $t_0$ and every path $\gamma$ on $q_{t_0}$ joining two singularities, the period $x_t + i y_t$ of $\gamma$ satisfied \[
+\frac{d}{dt}|_{t=t_0} x_t = y_{t_0}, \frac{d}{dt}|_{t=t_0} y_t = 0
+\]
+Then $q_t$ is an orbit of the horocyclic flow.
+\end{cor}
+
+\begin{proof}
+We have \[
+\begin{pmatrix} 1 & t \\ 0 & 1 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} x + t y \\ y \end{pmatrix}
+\]
+And we can integrate the two equations to find the linear action.
+\end{proof}
+
+We can now prove theorem \ref{MirThm}.
+
+\begin{proof}
+We want to show that \[
+q(\lambda,F_{\lambda}(E_{t \lambda}(X)))
+\]
+%TODO vérifier que ces fonctions ont des noms
+is a horocyclic flow path. We pick an arbitrary time $t_0$ and look at the derivative of the path, called $\gamma$. The coordinate $y_t$ is constant equal to $\lambda(\gamma)$ and the derivative of $x_t$ is by lemma\ref{LemDer} equal to $y_t$. We conclude by the previous lemma.
+\end{proof}

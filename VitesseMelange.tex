@@ -1,3 +1,5 @@
+\subsection{Mixing proprities of the geodesic and horocyclic flows}
+
 We will first give the behavior of two flows we described before.
 
 \begin{thm}
@@ -82,7 +84,73 @@ The Earthquake flow is also ergodic.
 With the conjugacie of Mirzharani, the earthquake flow is conjugated to the horocycle flow which is ergodic. This propriety is transmitted.
 \end{proof}
 
-We will now give an introduction to specral gap theory which permit to estimate the rate of mixing of somme flow.
+\subsection{Rate of mixing of this flows}
+
+Then we want to know at which rate the mixing of the geodesic and horocyclic flow happend. Ratner show in 1986 \cite{ratner_1987} that the geodesic flow is exponnetially mixing and the horocyclic flow has a polynomial rate of mixing. She used representation theory.
+
+We will first give some definition before abording the main theorem.
+
+\begin{dfnt}
+Let $H$ be a  complexe separable Hilbert space, $U(H)$ the group of all unitary transformation of $H$ onto itself and $T: G \to U(H)$ a unitary representation. We note $T(g)=T_g \in U(H)$.
+
+An element $v \in H$ is called \emph{a $C^k-vector$} for $T$, $k=0,1,...,\infty$ if $g \mapsto T_g(v)$ is a $C^k$-map from $G$ to the Hilbert space.
+\end{dfnt}
+
+\begin{rmq}
+The space of $C^{\infty}$ vector is dense in H.
+\end{rmq}
+
+\begin{dfnt}
+If $v$ is a $C^1$-vector of $H$ and $X$ is in the Lie algebra of $G$, the \emph{Lie derivative} $L_X v$ is \[
+L_X v =lim_{t \to 0} \frac{T(exp tX)v-v}{t}
+\]
+\end{dfnt}
+
+The Lie algebra of $SL(2,\mathbb{R})$, is the vector space of $2 \times 2$ matrice with zero trace. A basis for this space is \[
+W=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, Q=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, V=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+\]
+Which give the Casimir operator on $C^2$ vectors of $SL(2,\mathbb{R})$, \[
+\Omega_T = (L_v^2+L_Q^2-L_W^2)/4
+\]
+
+If $T$ is irreductible then $\Omega_T$ is a scalar multiple of the identity, i.e. \[
+\Omega_T v = \lambda v
+\]
+
+for some $\lambda=\lambda(T)\in \mathbb{R}$ and all $C^2$-vectors $v \in H(T)$
+
+If $\Gamma$ is a lattice of $SL(2,\mathbb{R})$, $\Omega_T$ create an operator $\Delta$ on $\Gamma \backslash SL(2,\mathbb{R})$. We call $\Lambda(\Delta)$ its spectrum and\[
+A(\Gamma)=\Lambda(\Gamma) \cup ]-1/4;0[
+B(\Gamma)=sup A(\Gamma)
+C(\Gamma)= -1 + \sqrt{1+4 B(\Gamma)}
+\]
+
+We can now write the theorem about the decay of correlation.
+
+\begin{thm}
+Let $\Gamma$ be a lattice in $SL(2,\mathbb{R})$, $M=\Gamma \backslash G$ and $T$ be the regular representation of $G$ on $L^2 (M, \mu)$. Let $v,w\in K(T,p)$, $p>0$, $<w,1>=0$ and $B(t)=<v,w \circ g_t>$, $C(t)=<v,w \circ h_t>$.
+Then there exist $t_0=t_0(\Gamma)>0$ such that for all $|t| \geq t_0$ and some $E,F > 0$\[
+|B(t)| \leq E( b(|t|))^{\alpha(p)}
+|C(t)| \leq F( b(ln|t|))^{\alpha(p)}
+\]
+where
+\begin{enumerate}
+\item $b(t)=e^{\sigma(\Gamma)}$ if $A(\Gamma) \neq \emptyset$
+\item $b(t)=e^{-t}$ if $A(\Gamma) = \emptyset$, $sup(\Lambda \cap ]- \infty; -1/4[) < -1/4$ and $-1/4$ is not an eigenvalue of $\Omega$
+\item $b(t)=te^{-t}$ if $A(\Gamma) = \emptyset$, $sup(\Lambda \cap ]- \infty; -1/4[)= -1/4$ or $-1/4$ is an eigenvalue of $\Omega$
+\end{enumerate}
+and $\alpha(p)$ is
+\begin{enumerate}
+\item $1$ if $p \geq 3$
+\item $\frac{2p}{2p+1}$ if $2 \leq p < 3$
+\item $\frac{2p}{2p+3}$ if $1 \leq p < 2$
+\item $\frac{p}{p+3}$ if $0<p<1$
+\end{enumerate}
+\end{thm}
+
+%TODO refaire en dessous
+
+On the other we can make the path backward, by learning information on the representation via the mixing rate of the flow it generates.
 
 \begin{dfnt}
 Let $G$ be a locally compact $\sigma$-compact group. A continuous unitary
@@ -102,5 +170,3 @@ Let consider a representation of $SL(2,\mathbb{R})$ by a measure presearving act
 %groupe orthogonal spécial
 \cite{2005math.....11614A}
 \end{prop}
-
-\cite{ratner_1987}
