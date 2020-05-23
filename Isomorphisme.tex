@@ -120,16 +120,37 @@ The measure we put on this foliation is uniform on every region between four edg
 %TODO ca semble foireux
 \subsection{Correspondance between foliations and quadratic differentials}
 
-For a quadratic differential $q$, one can define two measured foliations, the horizontal $h(q)$ and the vertical $v(q)$ corresponding in locate coordinate to $Re(z)$ and $Im(z)$. This give a map two the pair of foliation but it is not the subjectif, we should restrict ro the image.
+For a quadratic differential $q$, one can define two measured foliations, the horizontal $h(q)$ and the vertical $v(q)$ corresponding in locate coordinate to $Re(z)$ and $Im(z)$.
+
+Moreover the measure are \[
+h_{\nu} = \int Im(\sqrt{q(z)}dz)
+\]
+and \[
+h{\mu} = \int Re(\sqrt{q(z)}dz)
+\]
+
+ This give a map two the pair of foliation but it is not the subjectif, we should restrict to the image.
 Define $\Delta = {(\alpha,\beta):i(\alpha,\gamma)=i(\beta,\gamma)=0, \text{ for some }\gamma \in \mathcal{MF}}$. $\Delta$ contain the diagonal $(\alpha,\alpha)$ and is kind of "fat" diagonal.
 
 \begin{lem}
 For any $q \in \mathcal{QD}$, $(h(q),v(q)) \notin \Delta$
 \end{lem}
 
+\begin{proof}
+Suppose that there is $\gamma$ such as $i(h(q),\gamma)=i(v(q),\gamma)=0$ for somme $\gamma \in \mathcal{ML}$. Let take a sequence of simple closed weighted curves $\gamma_i$ converging to $\gamma$. By continuity of the intersection number with have that $i(h(q),\gamma_i) \to 0$. So there is a sequence of saddle connection is the same homotopie class of $\gamma_i$ whose $x$-components is very small. We can have the same argument in the vertical direction and find a contradiction.
+\end{proof}
+
 \begin{thm}
 The map $q \mapsto (h(q),v(q))$ define a homeomorphism $\mathcal{QD} \to \mathcal{MF} \times \mathcal{MF} \backslash \Delta$
 \end{thm}
+
+\begin{proof}
+We can describe the inverse map. If we take to measured foliation $h$ and $v$ we can tighten them into lamination (which we also call $h$ and $v$) as in the previous section. This two laminations do not share any leaf, otherwise we would have $(h,v) \in \Delta$ by considering the leaf as a geodesic.
+The complementary region of $h \cup v$ are compact polygons, i.e. they do not have a vertex on the boundary of the disk.
+Now we can fill the polygon to obtain the quadratic differential with a singularity in each complementary region of order the number of side of the polygon.
+\end{proof}
+
+More detail of the proof can be found in \cite{casson_bleiler_1988} Lemma 6.2 and \cite{QuadHub}. The injectivity is discuss with more detail in \cite{Gardiner-1991} section 3.
 
 \subsection{Shear Cordinate}
 %NOTE 238 Kerchoff une homotopy sur le disque qui respecte un groupe fushian s'étend sur le bord résultat de Nielsen

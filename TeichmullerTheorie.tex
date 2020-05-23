@@ -179,7 +179,63 @@ Moreover if we take a decomposition in a pair of pant that contait $\gamma$, it 
 
 One could give a precise proof that the extension of the earthquake map from the multicurves to the lamination is rigourous, that is if we take two sequence $\alpha_n$ and $\alpha_n'$ of multicurves which converge to the same lamination, then the sequences of earthquake map along this multicurves converge to the same map.
 
+We will work on universal covering of the surface, the half-plane $\mathbb{H}$
+If $v \in T^1 \mathbb{H}$ we will call $\gamma(v)$ the geodesic passing by the basepoint of $v$ and with $v$ as tangent vector at this point.
 
+We have to useful lemma to control the distortion of the earthquake map.
+
+\begin{lem}\label{DisVec}
+Let $l$ and $l'$ be two geodesic and $x \in l$, $y \in l'$ two points at most $\epsilon$ apart. Then if $v$ and $v'$ are the two geodesic tangents to $l$ and $l'$ respectively at point $x$ and $y$,
+we have $d(v,v')<C \epsilon$ for a universal constant $C$.
+\end{lem}
+
+\begin{lem}\label{DisShe}
+Let $v$ and $v'$ be two vector such that $d(v,v') < \epsilon$, let denote $\gamma=\gamma(v)$ and $\gamma'=\gamma(v')$. Let $w\in T^1 \mathbb{H}$, then \begin{enumerate}
+\item $d(E_{t \gamma}w,E_{t \gamma'}w) \leq Kt \epsilon$
+\item $d(E_{t \gamma}w,w) \leq Kt $
+\end{enumerate}
+for all $t\leq T$ and for a constant $K$ depending on $T$ and on the distance between the basepoint of $v$ and $w$.
+\end{lem}
+
+\begin{lem}
+Let $x,y \in \mathbb{H}$, $v\in T_1 \mathbb{H}$ based at $y$, $\bar{A}$ the geodesic from $x$ to $y$. Suppose $\gamma$ is a discrete lamination with equal measure on each leaf whose intersection with $\bar{A}$ is include in a subarc $A$. Let $l$ be a single geodesic intersecting $A$ with angle equal to the average angle of the iontesections of $\gamma$ and $A$ and with mass equal to $\mu=i(A,\gamma)$.
+%TODO figure de la situation
+
+If $A$ has length less than $\delta$ then for every $T\in \mathbb{R}^+$ the distance between $E_(t\gamma)v$ and $E_{t l}v$ is less than $Kt \mu \delta$, for all $t \leq T$ and K is a constant depending only of $T \mu$ and $d(x,y)$.
+\end{lem}
+
+\begin{proof}
+Let denote $l_1,l_2,...,l_n$ the leaf of $\gamma$. The image of $\bar{A}$ is a disconnected arc. The point $x$ is connected to $E_{t \gamma}y$ by a staircase path going along componnent of $\bar{A} \backslash \gamma$ and subarc of $l_i$. Let denote the succesive component $A_0,A_1,...,A_n$ and $\delta_i$ the length of $A_i$. So the staircase path is moving by $\delta_0$ along $A_0$ then by $\mu / n$ along $l_1$,and so on.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=6cm]{Image/ProofEarthquake.jpg}
+\caption{Image of the construction described, image from \cite{NielsenRealizationPro}}
+\end{figure}
+
+We now alter the path by replacing the shearing along $l_n$ distance $\mu / n$ by a shearing along $l_{n-1}$ distance $2 \mu /n$. The change is less than $Kt \frac{\mu}{n}C \delta_{n-1}$ by lemma \ref{DisVec} and lemma \ref{DisShe}. Then we change the shearing by a shearing along $l_{n-2}$ of distance $3 \mu /n$ and we continue until we shear a distance $\mu$ along $l_1$. The total change is less than $KtC\sum_{i=1}^{n-1}\frac{i \mu}{n} \delta_{n-i}$
+ which is less than $KCt \mu \delta$.
+ We now pass from $l_1$ to $l$ with lemma \ref{DisVec} and \ref{DisShe}, and we obtain the new lemma.
+\end{proof}
+
+We need a final lemma to conclude of the well-founded definition of the earthquake flow.
+
+\begin{lem}
+Let $x$, $y$, $v$, and $\bar{A}$ be as above, if $l$ and $l'$ be geodesic of $\mathbb{H}$ with measure $\mu$ and $\mu'$ such that $l \cup \bar{A} = l' \cup \bar{A}=p \notin \{x,y\}$ and the difference between the vectors tangent of $l$ and $l'$ at $p$ of length $\mu$ and $\mu'$ is less than 
+$\epsilon$.
+Then for any $T$, $d(E_{t l}v,E{t l'}v)<Kt \epsilon $, for $t \leq T$ and $K$ a constant which depend only on $d(x,y)$ and $T \mu$
+\end{lem}
+
+\begin{prop}
+Let $\nu \in \mathcal{ML}$ be a lamination and let $x$, $y$ be in $\mathbb{H}$, $A$ be the geodesic from $x$ to $y$ and $v\in T^1 \mathbb{H}$ be based at $y$, and $x$ and $y$ do not lie on the atomic part of $\nu$. Then for any $\epsilon$, $T$, there is a neighborhood $U$ of $\nu$ in $\mathcal{ML}$ such that for all
+$\gamma$, $\bar{\gamma}$ weighted multicurve in $U$, $d(E_{t \gamma}v,E_{t \bar{\gamma}}v) < K t \epsilon$, for all $t \leq T$, $K$ a constant depending only on $d(x,y)$ and $T i(\nu,A)$
+\end{prop}
+
+%TODO a finir si on a le temps
+
+\begin{cor}
+The earthquake flow is well defined along any lamination $\nu \in \mathcal{ML}$ and for all time $t$.
+\end{cor}
 
 \begin{rmq}
 The earthquake flow is an isometry outside the support of the lamination and is continous outside the atomic part, i.e. the simple closed geodesics of the lamination.
