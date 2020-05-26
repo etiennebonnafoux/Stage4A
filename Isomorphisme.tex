@@ -1,4 +1,4 @@
-The aim of this part is to demonstrate the followoing statement
+The aim of this part is to demonstrate the following statement
 
 \begin{thm}
 \label{MirThm}
@@ -15,9 +15,11 @@ on the bundle $\mathcal{QD}$ of nonzero quadratic differentials over Teichmülle
  }
 \]
 
-\subsection{Tightening map}%TODO vériphier l'orthographe
+To do this we will decompose $F$ between intermediates maps.
 
-A first coresspondance, found by Thurston, exist between measured foliation and measured lamination. We will mostly follow the paper of Levitt \cite{levittfoliations}.
+\subsection{Tightening map}
+
+A first coresspondance, found by Thurston, exist between measured foliations and measured laminations. We will mostly follow the paper of Levitt \cite{levittfoliations}.
 
 \begin{dfnt}
 We say that two foliations are equivalent if we can pass from one to the other by Whithead (see definition below) moves or isotopy (homeomorphism isotopic to the identity).
@@ -26,7 +28,8 @@ We say that two foliations are equivalent if we can pass from one to the other b
 
 \begin{dfnt}
 Given a measure foliation, an critical segment $\gamma$ is an arc between two singularities along a leaf which is not a simple closed curve.
-There is a map $f$ homotopic to the identy that collapse $\gamma$ to a point $x$ and is identity outside a neighboorhood of $\gamma$ which contain no other singularity .  Doing so we reduce the number of singularities of the foliation and if the extremoties of $\gamma$ are singularities of order $k_1$ and $k_2$, $x$ is now a singularity of the new foliation of order $k_1+k_2-2$.
+There is a map $f$ homotopic to the identy that collapse $\gamma$ to a point $x$ and is identity outside a neighboorhood of $\gamma$ which contain no other singularity. Doing so we reduce the number of singularities of the foliation and if the extremities of $\gamma$ are singularities of order $k_1$ and $k_2$, $x$ is now a singularity of the new foliation of order $k_1+k_2-2$.
+This action is called a \emph{Whithead move}.
 \end{dfnt}
 
 
@@ -37,7 +40,8 @@ There is a map $f$ homotopic to the identy that collapse $\gamma$ to a point $x$
 \begin{thm}
 Let $X$ be a closed orientable hyperbolic surface and $\mathcal{F}$ a foliation. There is a canonical geodesic lamination $\gamma(\mathcal{F})$ associated to $\mathcal{F}$. If $\mathcal{F}$ and $\mathcal{F}'$ are associated foliation then $\gamma(\mathcal{F})= \gamma(\mathcal{F}')$. In the opposite direction given a geodisic lamination $\gamma$, one can find a foliation $\mathcal{F}$ such that $\gamma(\mathcal{F})=\gamma$ and it's unique up to equivalence.
 \end{thm}
-%TODO mettre le recouverment universel
+
+
 \begin{dfnt}
 A \emph{tranverse curve} is a simple closed curve $C$ which is never tangent to $\mathcal{F}$ and contain no singularity of $\mathcal{F}$.
 \end{dfnt}
@@ -46,7 +50,7 @@ A \emph{tranverse curve} is a simple closed curve $C$ which is never tangent to 
 Since $\mathcal{F}$ contain only saddle singularities, $C$ cannot be contractible, therefor $C$ is isotopic to a simple closed geodesic.
 \end{rmq}
 
-We will work on the universal cover of $X$, which is the Poincaré disc $\mathbb{D}$ with circle "at infinity" $\mathbb{S}$. We call $p:X \to \mathbb{D}$ the universal projection.
+We will work on the universal cover of $X$, which is the Poincaré disc $\mathbb{D}$ with circle "at infinity" $\mathbb{S}_{\infty}$. We call $p:X \to \mathbb{D}$ the universal projection.
 $\mathcal{\tilde{F}}$ is $p^{-1}(\mathcal{F})$.
 
 We will say that a foliation follow the (*) condition if the following is true:
@@ -55,11 +59,11 @@ If $f_1$ and $f_2$ are two compact homotopic leaves then all leaf in the open an
 \end{center}
 
 \begin{lem}
-Let $h$ be a leaf of $\mathcal{\tilde{F}}$. Each end of $h$ converge to a point of $S$; the two point at infinity cannot be the same
+Let $h$ be a leaf of $\mathcal{\tilde{F}}$. Each end of $h$ converge to a point of $S$; the two point at infinity cannot be the same.
 \end{lem}
 
 \begin{proof}
-First, we should notice that the behavior of leaf at infinity do not change if we take an equivalent foliation. Indeed a homeomorphism $\phi$ on a compact fundamental domain isotopic to the identy can be extend to an homeomorphism $\tilde{\phi}$ on $\mathbb{D}$ such that $dist(x,\tilde{\phi}(x)) \leq K$. This implie that $\tilde{\phi}$ extend es the identity on the boundary $\mathbb{S}$.
+First, we should notice that the behavior of leaf at infinity do not change if we take an equivalent foliation. Indeed a homeomorphism $\phi$ on a compact fundamental domain isotopic to the identy can be extend to an homeomorphism $\tilde{\phi}$ on $\mathbb{D}$ such that $dist(x,\tilde{\phi}(x)) \leq K$. This implie that $\tilde{\phi}$ extend es the identity on the boundary $\mathbb{S}_{\infty}$.
 
 \smallbreak
 Then given a leaf $h$ of $\mathcal{\tilde{F}}$, we take a half leah $h_0$. If $p(h_0)$ is compact or spiral toward a compact leaf of $\mathcal{F}$ then the first part of the lemme is imediate.
@@ -68,7 +72,7 @@ Then given a leaf $h$ of $\mathcal{\tilde{F}}$, we take a half leah $h_0$. If $p
 Otherwise, $p(h)$ meet a transverse curve $C$ infinitely often. With an isotopie we can take $C$ to be a geodesic. Now $h_0$ can meet a connect component of $\tilde{C}=p^{-1}(C)$ only one time. Otherwise there will be a disk bound by an arc of $\tilde{C}$ and an arc of $h_0$, which is impossible considering the transversity of $C$ and that $\mathcal{F}$ have no $1$-type singularities.
 
 \smallbreak
-Now every compact of $\mathbb{D}$ meet a finite number of connected components of $\tilde{C}$ so the limit set of $h_0$ must be on $\mathbb{S}$. This limit set is connected and non empty. Moreover it should not contains any end of a connected component of $\tilde{C}$. But the ends of connected components of $\tilde{C}$ are dense in $\mathbb{S}$ as $\tilde{C}$ is the image of a geodesic by $\pi_1(X)$. This show the first point of the lemma.
+Now every compact of $\mathbb{D}$ meet a finite number of connected components of $\tilde{C}$ so the limit set of $h_0$ must be on $\mathbb{S}_{\infty}$. This limit set is connected and non empty. Moreover it should not contains any end of a connected component of $\tilde{C}$. But the ends of connected components of $\tilde{C}$ are dense in $\mathbb{S}_{\infty}$ as $\tilde{C}$ is the image of a geodesic by $\pi_1(X)$. This show the first point of the lemma.
 
 \smallbreak
 The second assertion is clear if $p(h)$ is compact or if it meet a transverse curve $C$ at least twice since then every connected componnents of $\tilde{C}$ separate the end of $h$.
@@ -90,7 +94,7 @@ Let $g_n=\gamma(h_n)$ be a sequence of geodesics in $\tilde{\gamma(\mathcal{F})}
 
 \smallbreak
 Let $L$ be the limit set in $\bar{\mathbb{D}}$. For all leaf $m$ in $\tilde{\mathcal{F}}$, we call $\bar{m}$ the closure of $m$
- by adding the two end point in $\mathbb{S}$. Then $L$ meet at least one connected component of $\bar{\mathbb{D}} \\ \bar{m} $. As the end points of all leaf of $\tilde{\mathcal{F}}$ is a dense subset of $\mathbb{S}$, $L$ contain a leaf $h$. Taking a half-leaf $h_0$, we want to show that the end point is the same as one of $g$.
+ by adding the two end point in $\mathbb{S}_{\infty}$. Then $L$ meet at least one connected component of $\bar{\mathbb{D}} \\ \bar{m} $. As the end points of all leaf of $\tilde{\mathcal{F}}$ is a dense subset of $\mathbb{S}_{\infty}$, $L$ contain a leaf $h$. Taking a half-leaf $h_0$, we want to show that the end point is the same as one of $g$.
 
 \smallbreak
 A first case is if there is a simple closed curve $C$  transverse to $\mathcal{F}$ which meet $p(h_0)$ infinitely often. If $h_0$ does not converge to the corresponding point at infinity then there would be a connected component of $p^{-1}(C)$ that contains the point of infinity of $h_0$ but does not contain the point of infiny of $h_n$ which is impossible for large $n$.
@@ -100,7 +104,7 @@ A second case is if $p(h_0)$ spirals toward a compact leaf, then closed leaf clo
 \smallbreak
 
 Finally if $p(h)$ is compact then $p(h_n)$ spirals toward it for large $n$, therefore $\gamma(h)$ and $g$ have one point in common at infinity. If the second was different, by applying a transformation leaving $\gamma(h)$ invariant (but no $g$), we would separate $h$ from the leaves $h_n$, and it is a contradiction.
-%TODO finir la preuve : réciproque
+
 \end{proof}
 
 Now we want to exhib an inverse construction which take a lamination $\lambda$ and give a foliation $\mu$. To do this we still consider $\tilde{\lambda}$ in the universal cover. We will suppose that every complementary region is a ideal polygon.
@@ -198,7 +202,7 @@ Let $I$ be the set of all triangles in $\mathbb{D}$ that $A$ meet. For each $i\i
 \]
 
 \begin{dfnt}
-Given a countable totally ordered set of indice $I$ and element $S_i$ in a Banach algebra, we say that $\prod_i S_i$ is well defined and equal to $S$ if for any increasing chain \[
+Given a countable totally ordered set of indice $I$ and element $S_i$ in a Banach algebra, we say that $\prod_i S_i$ is \emph{well defined} and equal to $S$ if for any increasing chain \[
 I_0 \subset I_1 \subset ... \subset I
 \]
 with $\cup_k I_k=I$ we have $lim_{k \to \infty} \prod_{i \in I_k}S_i =S $.

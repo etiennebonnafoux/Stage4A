@@ -150,13 +150,11 @@ and $\alpha(p)$ is
 
 %TODO refaire en dessous
 
-On the other we can make the path backward, by learning information on the representation via the mixing rate of the flow it generates.
+On the other we can make the path backward, by learning information on the representation via the mixing rate of the flow it generates. This way is taken in the appendice B of \cite{2005math.....11614A}.
 
 \begin{dfnt}
 Let $G$ be a locally compact $\sigma$-compact group. A continuous unitary
-%NB unitary?
  representation of $G$ is said to have \emph{almost invariant vectors}
- %TODO faire ca à toute les def
  if for every $\epsilon > 0$ and for every compact subset $K \subset G$, there exists a unit vector $V$ such that $\|g*v-v\| < \epsilon$ for all $g \in K$.
 
  A unitary action which does not have almost invariant vectors is said to be \emph{isolated from trivial representation}.
@@ -164,9 +162,10 @@ Let $G$ be a locally compact $\sigma$-compact group. A continuous unitary
  If $G$ is a semi-simple Lie group, a representation which is isolated from trivial representation is alos said to have a spectral gap.
 \end{dfnt}
 
+With this definition, we can write the following theorem.
+
 \begin{prop}
 Let consider a representation of $SL(2,\mathbb{R})$ by a measure presearving action of automorphisms of a probability space. Let $\rho$ be the repesentation associate on $H$ the space of the $L^2$ function with zero averages. Assume there is $\delta \in ]0;1[$ and a dense subset of the subspace of $SO(2,\mathbb{R})$-invariant function $H' \subset H$ consisting of functions $\phi$ for which the correlations $<\phi, \rho(g_t) \time \phi>$, $g_t=\begin{pmatrix} e^t & 0 \\ 0 & e^{-t} \end{pmatrix} $
 , decay like $O(e^{- \delta t})$. Then $\rho$ is isolated from the trivial representation.
-%groupe orthogonal spécial
-\cite{2005math.....11614A}
+
 \end{prop}

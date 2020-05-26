@@ -1,0 +1,36 @@
+
+\begin{figure}
+\centering
+\begin{tikzpicture}[scale=1,cap=round]
+\tkzInit[xmin=-6, xmax=3, ymin=0, ymax=5]
+\tkzClip
+%Draw circle
+\tkzDefPoint(0,0){O} %define origin
+\tkzDefPoint(0,1.25){C1} %define center circle 1
+\tkzDefPoint(0,2){C2} %define center circle 2
+\tkzDefPoint(-1,0){C3} %define center circle 3
+\tkzDefPoint(-1.75,0){C4} %define center circle 4
+\tkzDefPoint(-2.5, 0){C5} %define center circle 5
+
+\draw[thick, red, postaction={decorate, decoration={markings,
+            mark=at position .65 with {\arrow[scale=1.5]{stealth}};}} ] (O) -- (0, 5); %vertical line
+\draw[thick] (-6, 0) -- (4, 0); %horizontal line
+
+\tkzDrawCircle[thick, green!50!gray, postaction={decorate, decoration={markings,
+            mark=at position .0 with {\arrow[scale=1.5]{stealth reversed}};}}](C1,O){circle1}
+\tkzDrawCircle[thick, green!50!gray, postaction={decorate, decoration={markings,
+            mark=at position .0 with {\arrow[scale=1.5]{stealth reversed}};}}](C2,O){circle2}
+
+\tkzDrawCircle[thick, red, postaction={decorate, decoration={markings,
+            mark=at position .25 with {\arrow[scale=1.5]{stealth}};}}](C3,O){circle3}
+\tkzDrawCircle[thick, red, postaction={decorate, decoration={markings,
+            mark=at position .25 with {\arrow[scale=1.5]{stealth}};}}](C4,O){circle4}
+\tkzDrawCircle[thick, red, postaction={decorate, decoration={markings,
+            mark=at position .25 with {\arrow[scale=1.5]{stealth}};}}](C5,O){circle5}
+
+
+%\tkzDrawPoints(O, C1, C2, T3, C3)
+%\tkzLabelPoints[below](O, C1, C2, T3, C3)
+\end{tikzpicture}
+\caption{}
+\end{figure}

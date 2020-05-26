@@ -2,17 +2,17 @@
 
 To beggin we will in this section give the very definition to introduce the theory of Teichmuller space
 
-\begin{dfnt}{Teichmuller space}
+\begin{dfnt}
 Let $S$ be a surface of genus $g$, a marking of $S$ is a couple $(X,f)$ made of a closed Riemann surface $X$ and of one homeomorphism $f:S \to X$ which preserve the orientation.
-On the set of the marking $S$, we have a equivalence relation,  $(X_1,f_1) \sim (X_2,f_2)$ if there exist $\alpha : X_1 \to X_2 $ such that $f_2 \circ \alpha \circ f_1^{-1}$ be an homeomorphism of $S$ preserving the orientation and isotope to the identity map.
-The set of the marking quotient by the previous relation is the Teichmuller space and is written $\mathcal{T}_g$.
+On the set of the marking $S$, we have a equivalence relation,  $(X_1,f_1) \sim (X_2,f_2)$ if there exist $\alpha : X_1 \to X_2 $ such that $f_2 \circ \alpha \circ f_1^{-1}$ be an homeomorphism of $S$ preserving the orientation and isotope to the identity map.%TODO diagramme
+The set of the marking quotient by the previous relation is the \emph{Teichmuller space} and is written $\mathcal{T}_g$.
 \end{dfnt}
 
 \begin{rmq}
-If $g \geq 2$, for every closed curve $\alpha$ of $S$, there is only one closed geodesic of $X$ freely isotope to $f(\alpha)$. Moreover if $\alpha$ is simple, so is the geodesic. We will note $l_{\alpha}(X)$ its hyperbolic length and we will take the weakest topologie on $T_g$ which make this map continuous.
+If $g \geq 2$, for every closed curve $\alpha$ of $S$, there is only one closed geodesic of $X$ freely isotope to $f(\alpha)$. Moreover if $\alpha$ is simple, so is the geodesic. We will note $l_{\alpha}(X)$ its hyperbolic length and we will take the weakest topologie on $\mathcal{T}_g$ which make this map continuous.
 \end{rmq}
 
-This give a map $L: T_g \to \mathbb{R}^{\mathbf{S}}$, where $\mathbf{S}$ is the set of all simple closed curve of a given surface. We can ask if this map si injective, i.e. that a geometry is given by the length of the set of simple closed curve. The answer is yes and more precisely one can choose only $9g-9+3n$ curve so that this map is injective \cite{farb2011primer} Theorem 10.7.  This give the intuition that Teichmuller space can be only by using a finite set of parameter. We will see after that other coordinates which have nice propeties for other utilisations.
+This give a map $L: T_g \to \mathbb{R}^{\mathbf{S}}$, where $\mathbf{S}$ is the set of all simple closed curve of a given surface. We can ask if this map si injective, i.e. that a geometry is given by the length of the set of simple closed curve. The answer is yes and more precisely one can choose only $9g-9+3n$ curve so that this map is injective \cite{farb2011primer} Theorem 10.7.  This give the intuition that Teichmuller space can be describe only by using a finite set of parameter. We will see after that other coordinates which have nice propeties for other utilisations.
 %TODO mettre la peruve
 
 
@@ -25,52 +25,37 @@ Let $X$ be a hyperbolic surface then \[
 Where the sum is taken other all simple closed geodesic.
 \end{thm}
 
-This theorem was prove by McShane and bear his name \cite{Mcshane95simplegeodesics}. A good introduction with a proof using measure on tree can be found in this paper \cite{labourie:hal-01654564}.
+This theorem was prove by McShane and bear his name \cite{Mcshane95simplegeodesics}. A good introduction with a proof using probablistic method on tree can be found in this paper \cite{labourie:hal-01654564}.
 
-\begin{dfnt}{Modular Space}
-The modular group is the group of homeomorphism of $S$ which respect orientation quotiented by the one isotopic to the identity map. We will call this group $Mod_g$
-It act discretly on the Teichmuller space $T_g$ and the quotient is called the moduli space and is written $\mathcal{M}_g$.
+\begin{dfnt}
+The \emph{modular group} is the group of homeomorphisms of $S$ which respect orientation quotiented by the subgroup of homeomorphisms isotopic to the identity map. We will call this group $Mod_g$
+It act discretly on the Teichmuller space $\mathcal{T}_g$ and the quotient is called the \emph{moduli space} and is written $\mathcal{M}_g$.
 \end{dfnt}
 
-The Teichmuller space is the universal covering of the modular space. IN fact the Teichmuller space is homeomorph to a sphere and so is contractible and in particular, connected and simply connected. It is the universal covering of the moduli space.
+The Teichmuller space is the universal covering of the modular space. In fact the Teichmuller space is homeomorph to a sphere and so is contractible and in particular, connected and simply connected. It is the universal covering of the moduli space.
 
-We can ask ourselves how look this spaces and if we can give an easy representation of them. The fact is that the modular space is not manifold but an orbifold, that is a space which locally look like a ball of a vector space quotiented by a finite group.
+We can ask ourselves how this spaces look and if we can give an easy representation of them. The fact is that the modular space is not manifold but an orbifold, that is a space which locally look like a ball of a vector space quotiented by a finite group.
 
+We will now describe objects that are natural to understand the Teichmuller space.
 
- A begginnig is to give a set of generator of the modular group.
-
-\begin{dfnt}{Dehn twist}
-Let $\gamma$ be a simple closed curve. There is a tubular neighborhood of $\gamma$ called $A$ homeomorph to $[0;1] \times S^{1}$.
-A Dehn's twist around $\gamma$ is the homeomorphism which is the identity out of $A$ and is $(t,s) \mapsto (t,e^{2i \pi t} s)$ on $A$.
-\end{dfnt}
-
-\begin{figure}[!h]
-\centering
-\includegraphics[width=6cm]{Image/Dehn_twist.png}
-\caption{A Dehn twist}
-\end{figure}
-
-\begin{rmq}
-The Lickorisk theorem states that the modular group is generated by the Dehn's twist and more precisely that one can choose only $2g+1$ generators \cite{Lickorish1964AFS}.
-\end{rmq}
-
-\begin{dfnt}{Measured foliation}
-Given a surface $S$ and a finite set of points $P=(p_1,p_2,...)$, given a open covering $U_i$ on $S-P$, a collection of $C^1$
+\begin{dfnt}
+A \emph{foliation} on a surface $S$ s the collection of the following data: a finite set of points $P=(p_1,p_2,...)$, given a open covering $U_i$ on $S-P$, a collection of $C^1$
  real function $\nu_i$ such than $\| d \nu_j \| = \| d \nu_i \|$  on $U_i \cap U_j$,
- and near each singular point $p_s$ a coordinate neighborhood $V$ with complex coordinate $z$ such that $\| d \nu \| = \| Im(z^{\frac{k}{2}}dz) \|$ for some positive integer $k$ called the degree of the singular point,
- leaves of the foliations are the graphs immersed $S$ in along $dv$ is constant. In addition if each boundary circle pf $S$ is contained in a singular leaf, then ti is called a measurd foliation.
+ and near each singular point $p_s$ a coordinate neighborhood $V$ with complex coordinate $z$ such that $\| d \nu \| = \| Im(z^{\frac{k}{2}}dz) \|$ for some positive integer $k$ called the degree of the singular point.
+
+ Leaves of the foliations are the graphs immersed in $S$ along which $dv$ is constant. In addition if the surface $S$  have a boundary we is required that it is contained in a singular leaf.
 \end{dfnt}
 
 The height $h_\gamma(\| d \nu \|)$ of a (free homotopy class) of a loop $\gamma$ on $S$ is the infinimum in the homotopy class of the integral by $\| d \nu \|$
 \[
-h_\gamma(\| d \nu \|)=inf_{\gamma \equiv \gamma'} \int_gamma \| d \nu \|
+h_\gamma(\| d \nu \|)=inf_{\gamma \sim \gamma'} \int_{\gamma} \| d \nu \|
 \]
 
 The topology on the measured lamination that we will use is the weakest that make the height functions continous.
 
 \begin{rmq}
-We won't actually study the set of measured lamination but the equivalence class of \[
-h_\gamma(\| d \nu \|)=h_\gamma(\| d \mu \|), \text{ for each loop} \gamma \in S
+We won't actually study the set of measured foliation but the equivalence class of \[
+h_\gamma(\| d \nu \|)=h_\gamma(\| d \mu \|), \text{ for each loop } \gamma \in S
 \].
 We can equivalently use Whitehead equivalence relation on singular foliations by collapsing critical intervals to points and taking isotopy of foliation.
 \end{rmq}
@@ -78,18 +63,20 @@ We can equivalently use Whitehead equivalence relation on singular foliations by
 Let $\mathcal{MF}(S)$ be the space of all equivalence classes of measured foliations.
 %TODO dessin et référence
 
-\begin{dfnt}{Lamination}
-A lamination is a closed set made of an union (non necessarely finite) of geodesic.
-For each point $x$ in $\lambda$ a lamination passed only one geodesic of the lamination.
+\begin{dfnt}
+A \emph{lamination} is a closed set made of an union (non necessarely finite) of geodesics.
+For each point $x$ in $\lambda$, a lamination, passed only one geodesic of the lamination.
 We will write this space $\mathcal{ML}(x)$.
 \end{dfnt}
 
-\begin{dfnt}{Geodesic currents}
+To understand the space of geodeisc lamination it is sometimes easier to understand the "trace" of this space in the boundary circle of the universal cover of tge surface. This observation gives the following definition.
+
+\begin{dfnt}
 Let $\mathcal{M}_\infty$ be the space of unordered pairs of distinct points in $\mathbb{S}^1$ \[
 \mathcal{M}_\infty := {(z,w) \in \mathbb{S}^1 \times \mathbb{S}^1 , z \neq w}//(z,w) \equiv (w,z)
 \]
 Let $G$ be a discret torsion-free group in $PSL(2,\mathbb{R})$ such that $\mathbb{H}//G=S$ is a hyperbolic surface.
-A geodesic current $\mu$ on $S$ is a $G$-invariant Radon measure on $\mathcal{M}_\infty$.
+A \emph{geodesic current} $\mu$ on $S$ is a $G$-invariant Radon measure on $\mathcal{M}_\infty$.
 We will note $\mathcal{GC}(S)$ the space of geodesic currents, see \cite{kapovich2009hyperbolic}
 \end{dfnt}
 
@@ -105,10 +92,10 @@ Let $g \in G$ be an element that represent a simple closed geodesic on the surfa
 A mullticurve is a formel sum of geodesics $\gamma = \sum a_i \gamma_i$. The space of lamination is in some aspect the closure of the set of all multicurve
 \end{rmq}
 
-\begin{dfnt}{Intersection number}
+\begin{dfnt}
 Consider the square $\mathcal{M}_\infty^2 := \mathcal{M}_\infty \times \mathcal{M}_\infty $. In this space we can consider the open subset $\mathcal{IM}^2_\infty$ corresponding to pair pairs of geodesics which have transversal intersections in $\mathbb{H}$. G act on $\mathcal{IM}^2_\infty$.
 If $\mu$ and $\nu$ are geodesic currents in $\mathcal{GC}(S)$, the product $\mu \times \nu$ define a $G$-invariant measure on $\mathcal{IM}^2_\infty$.
-Finally if we take the mass of the total space $\mathcal{IM}^2_\infty // G$, the reasult is called the intersection number, $i(\mu,\nu)$
+Finally if we take the mass of the total space $\mathcal{IM}^2_\infty // G$, the reasult is called the \emph{intersection number}, $i(\mu,\nu)$
 \end{dfnt}
 
 \begin{prop}
@@ -128,13 +115,8 @@ The topology on $\mathcal{ML}$ is the weakest that make $i(.,.)$ a continous fun
 \end{rmq}
 
 \begin{dfnt}
-A quadratic differential is a section of the square of the tangent space to $X$. It is locally as $\phi= \phi(z) dz^2$.
+A \emph{quadratic differential} is a section of the square of the tangent space to $X$. It is locally as $\phi= \phi(z) dz^2$.
 \end{dfnt}
-
-\begin{rmq}
-Si $\phi(p) \neq 0$ on peut trouver une carte contenant $p$ dans laquel $\phi = dz^2$.
-Ainsi $\phi$ détermine une métrique plate sur $X$ et un feuilletage $\mathcal{F}$ correspondant aux lignes horizontales.
-\end{rmq}
 
 \begin{rmq}
 If $\phi(p) \neq 0$ we can find a map including $p$ in which $\phi = dz^2$.
@@ -148,12 +130,87 @@ A quadratic differential is said to be integral if\[
 \]
 We will write $\mathcal{Q}(x)$ the Banach space of integral quadratic differentials.
 
+\subsection{Decomposition of hyperbolic surface}
+
+One way to construct all hyperbolic surface is to decompose them in elementary piece, that we will call pair of pant.
+
+A hyperbolic geometric exercice show that a hexagone which side are geodesics and with right angles is determined by the lenght of three sides which are not consecutifs.
+%QUESTION Faire cette exercice
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=12cm]{Image/PairOfPant.jpg}
+\end{figure}
+
+ On the image above $\gamma_i$, $\gamma_j$ and $\gamma_k$ determined the hexagone. Then we can glued them to have a pair of pant.
+
+ \begin{dfnt}
+ A \emph{pair of pant} is a hyperbolic surface with three geodesic boundaries and no ponctured.
+ \end{dfnt}
+
+\begin{rmq}
+The pair of pant is uniquely determined by the lenght of the three boundary geodesics.
+\end{rmq}
+
+\begin{proof}
+As a hyperbolic polygon is uniquely determined by three non consecutif sides, the surface with boundaries that we obtain by gluing two together is determined by the length of its three boundary geodesics.
+\end{proof}
+
+\begin{rmq}
+The lenght of one or more geodesic can go to zero and the boundaries become a ponctured.
+\end{rmq}
+
+We can now decompose, with the following theorem, all hyperbolic surfaces in a collection of pair of pants.
+
+\begin{thm}
+Let $S$ be a surface of genus $g$ and with $n$ ponctured. There is a set of $3g-3+n$ simple closed curves $(\gamma_1,...,\gamma_{3g-3+n})$ such that $S\ \Cup \gamma_i$ is a disjoint collection of pair of pants.
+\end{thm}
+
+\begin{dfnt}
+Given a surface $S$ and a pant decomposition $\gamma_1,...,\gamma_{3g-3+n}$, we have a map \[
+\mathcal(S) \rightarrow (\mathbb{R^{+}}^{3g-3+n},\mathbb{R}^{3g-3+n}) \\
+X \mapsto (l_{\gamma_1}(X),...,l_{\gamma_{3g-3+n}}(X),\tau_{\gamma_1}(X),...,\tau_{\gamma_{3g-3+n}}(X))
+\]
+This map is injective and is call the \emph{Fenchel-Nielsen} cordinates.
+%TODO demontrez ça ?
+\end{dfnt}
+
+\begin{dfnt}{Dehn twist}
+Let $\gamma$ be a simple closed curve. There is a tubular neighborhood of $\gamma$ called $A$ homeomorph to $[0;1] \times S^{1}$.
+A \emph{Dehn's twist} around $\gamma$ is the homeomorphism which is the identity out of $A$ and is $(t,s) \mapsto (t,e^{2i \pi t} s)$ on $A$.
+\end{dfnt}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=6cm]{Image/Dehn_twist.png}
+\caption{A Dehn twist}
+\end{figure}
+
+We can now give a set of generator of the modular group.
+
+\begin{rmq}
+The Lickorisk theorem states that the modular group is generated by the Dehn's twist and more precisely that one can choose only $2g+1$ generators \cite{Lickorish1964AFS}. We will give here a easier version of this theorem.
+\end{rmq}
+
+\begin{thm}
+There is a collection $\delta_{1},...,\delta{9g-9}$ of simple closed curves such that $\mathcal{T}_{g} \to \mathbb{R}^{9g-9}$ is injective.
+\end{thm}
+
+\begin{proof}
+Let take $(\gamma_1,...,\gamma_{9g-9})$ a decomposition in pair of pants, $(\alpha_1,...,\alpha_{9g-9})$ be a collection of simple closed curves such that $i(\gamma_i,\alpha_i) > 0$ and $i(\gamma_i,\alpha_j)=0$ for $i \neq j$, finnely we take $\beta_i=D_{\gamma_i}(\alpha_i)$. We want to show that the length of this collection of $9g-9$ curves determined the hyperbolic structure $X \in \mathcal{T}_g$.
+$X$ already has the Fenchel-Nielsen coordinate, of the pant decomposition $(\gamma_1,...,\gamma_{3g-3})$, $(l_{\gamma_1}(X),\tau_{\gamma_1}(X),...,l_{\gamma_{3g-3}}(X),\tau_{\gamma_{3g-3}}(X))$ so we need only to show that the parameters $\tau_{\gamma_i}(X)$ are determined by the lenght of the collection. Up to a renormalisation we can take $\tau_{\gamma_i}(X)=0$ for every $i$. Now let's take $t=(t_1,...,t_{3g-3}) \in \mathbb{R}^{3g-3} \backslash 0$.
+We will note $X_t$ the hyperbolic geometry which has the same length as $X$ and twist parameters $t$ in the Fenchel-Nielsen coordinate of the pair of pants. So $X_0 = X$. We will consider the function $A(t)=l_{\alpha_1}(X_t)$ and $B(t)=l_{\beta_1}(X_t)$. This function depend only of $t_1$ as $i(\gamma_i,\alpha_j)=0$ for $i \neq j$. Moreover they are strictly convex and by definition we have $A(t_1+l_(\gamma_1)(X))= B(t_1)$. We will show that there is no $t_1 \neq 0$ such that $A(t_1)=A(0)$ and $B(t_1)=B(0)$ that is $A(t_1+l_(\gamma_1)(X))=A(l_(\gamma_1)(X))$. We will note $s=t_1$ and $L=l_(\gamma_1)(X)$
+Suppose there is $s \neq 0$ such that $A(s)=A(0)$, we can take $s > 0$, the other case is symetric. If $s < L$, then by convexity for every $t \in ]0;s[$, $A(t) < A(0)=A(s)$ and $A$ is stricty increasing after $s$ so as $s < L < L+s$ we have $A(L)< A(L+s)$.
+If $s > L$, then $L < s < L+s$ and  $A(L) < A(L+s)$. The final case $s=L$ is also impossible since we would have $A(0)=A(L)=A(2L)$.
+Finally we can make the same argument for the other twist parameters which conclude the proof.
+\end{proof}
+
 \subsection{Flow on Teichmüller space}
 
 We will define the main object of this paper, earthquake flow.
 
 \begin{dfnt}
-The earthquake flow is family of maps defined for $t \in \mathbb{R}$
+The \emph{earthquake flow} is family of maps defined for $t \in \mathbb{R}$
 \[
 \begin{array}{crcl}
 
@@ -163,7 +220,7 @@ E_t: & \mathcal{ML}\times \mathcal{T}_g & \to & \mathcal{ML}\times \mathcal{T}_g
 
 \end{array}
 \]
-where $E_{t \lambda}$ is first defined if $\lambda$ is a simple closed curve. In this case, we open the surface along lambda, then twist the left part of $t$ unit and put it together again. Then if $\gamma_1$ and $\gamma_2$ are two curves that don't intersect, $E_{\gamma_1}$ and $E_{\gamma_2}$ commute. So we can define the earthquake map on weighted multicurves by twisting one curve after the other by amount proportional to the weight. Finally as multicurves are dense in the set of lamination we can extend this map for any lamination \cite{NielsenRealizationPro}.
+where $E_{t \lambda}$ is first defined if $\lambda$ is a simple closed curve. In this case, we open the surface along lambda, then twist the left part of $t$ unit and put it together again. Then if $\gamma_1$ and $\gamma_2$ are two curves that don't intersect, $E_{\gamma_1}$ and $E_{\gamma_2}$ commute. So we can define the earthquake map on weighted multicurves by twisting one curve after the other by amounts proportional to the weight. Finally as multicurves are dense in the set of lamination we can extend this map for any lamination \cite{NielsenRealizationPro}.
 \end{dfnt}
 
 \begin{figure}[h!]
@@ -182,7 +239,7 @@ One could give a precise proof that the extension of the earthquake map from the
 We will work on universal covering of the surface, the half-plane $\mathbb{H}$
 If $v \in T^1 \mathbb{H}$ we will call $\gamma(v)$ the geodesic passing by the basepoint of $v$ and with $v$ as tangent vector at this point.
 
-We have to useful lemma to control the distortion of the earthquake map.
+We have to useful lemma to control the distortion of the earthquake map. We will not proove them, but their proofs is in \cite{NielsenRealizationPro}.
 
 \begin{lem}\label{DisVec}
 Let $l$ and $l'$ be two geodesic and $x \in l$, $y \in l'$ two points at most $\epsilon$ apart. Then if $v$ and $v'$ are the two geodesic tangents to $l$ and $l'$ respectively at point $x$ and $y$,
@@ -197,8 +254,10 @@ Let $v$ and $v'$ be two vector such that $d(v,v') < \epsilon$, let denote $\gamm
 for all $t\leq T$ and for a constant $K$ depending on $T$ and on the distance between the basepoint of $v$ and $w$.
 \end{lem}
 
+With this two lemma, we can describe what happend if we change a discret lamination by a simple closed curve that average it.
+
 \begin{lem}
-Let $x,y \in \mathbb{H}$, $v\in T_1 \mathbb{H}$ based at $y$, $\bar{A}$ the geodesic from $x$ to $y$. Suppose $\gamma$ is a discrete lamination with equal measure on each leaf whose intersection with $\bar{A}$ is include in a subarc $A$. Let $l$ be a single geodesic intersecting $A$ with angle equal to the average angle of the iontesections of $\gamma$ and $A$ and with mass equal to $\mu=i(A,\gamma)$.
+Let $x,y \in \mathbb{H}$, $v\in T_1 \mathbb{H}$ based at $y$, $\bar{A}$ the geodesic from $x$ to $y$. Suppose $\gamma$ is a discrete lamination with equal measure on each leaf whose intersection with $\bar{A}$ is include in a subarc $A$. Let $l$ be a single geodesic intersecting $A$ with angle equal to the average angle of the intersections of $\gamma$ and $A$ and with mass equal to $\mu=i(A,\gamma)$.
 %TODO figure de la situation
 
 If $A$ has length less than $\delta$ then for every $T\in \mathbb{R}^+$ the distance between $E_(t\gamma)v$ and $E_{t l}v$ is less than $Kt \mu \delta$, for all $t \leq T$ and K is a constant depending only of $T \mu$ and $d(x,y)$.
@@ -209,7 +268,7 @@ Let denote $l_1,l_2,...,l_n$ the leaf of $\gamma$. The image of $\bar{A}$ is a d
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=6cm]{Image/ProofEarthquake.jpg}
+\includegraphics[width=10cm]{Image/ProofEarthquake.jpg}
 \caption{Image of the construction described, image from \cite{NielsenRealizationPro}}
 \end{figure}
 
@@ -218,13 +277,15 @@ We now alter the path by replacing the shearing along $l_n$ distance $\mu / n$ b
  We now pass from $l_1$ to $l$ with lemma \ref{DisVec} and \ref{DisShe}, and we obtain the new lemma.
 \end{proof}
 
-We need a final lemma to conclude of the well-founded definition of the earthquake flow.
+We need a final lemma to conclude of the well-founded definition of the earthquake flow. In this case we control the difference after earthquaking by two simple geodesic going by the same point of the arc.
 
 \begin{lem}
-Let $x$, $y$, $v$, and $\bar{A}$ be as above, if $l$ and $l'$ be geodesic of $\mathbb{H}$ with measure $\mu$ and $\mu'$ such that $l \cup \bar{A} = l' \cup \bar{A}=p \notin \{x,y\}$ and the difference between the vectors tangent of $l$ and $l'$ at $p$ of length $\mu$ and $\mu'$ is less than 
+Let $x$, $y$, $v$, and $\bar{A}$ be as above, if $l$ and $l'$ be geodesic of $\mathbb{H}$ with measure $\mu$ and $\mu'$ such that $l \cup \bar{A} = l' \cup \bar{A}=p \notin \{x,y\}$ and the difference between the vectors tangent of $l$ and $l'$ at $p$ of length $\mu$ and $\mu'$ is less than
 $\epsilon$.
 Then for any $T$, $d(E_{t l}v,E{t l'}v)<Kt \epsilon $, for $t \leq T$ and $K$ a constant which depend only on $d(x,y)$ and $T \mu$
 \end{lem}
+
+Finnally this give the theorem which control the distance between two earthquake path.
 
 \begin{prop}
 Let $\nu \in \mathcal{ML}$ be a lamination and let $x$, $y$ be in $\mathbb{H}$, $A$ be the geodesic from $x$ to $y$ and $v\in T^1 \mathbb{H}$ be based at $y$, and $x$ and $y$ do not lie on the atomic part of $\nu$. Then for any $\epsilon$, $T$, there is a neighborhood $U$ of $\nu$ in $\mathcal{ML}$ such that for all
@@ -246,7 +307,7 @@ Thurston show that given two point in the Teichmüller space, there is a laminat
 We can ask ourselves what is an invariant measure of this flow.
 
 \begin{dfnt}
-The Weil-Peterson form is the the form \[
+The \emph{Weil-Peterson form} is the the form \[
 \omega_{WP} = \sum d l_i \wedge d \tau_i
 \]
 Where $(l_1,...,\tau_1)$ are the Fenchel-Nielsen according to a pant decomposition.
@@ -259,18 +320,18 @@ B(X)=\mu_{Th}(\lambda \in \mathcal{ML}, l_\lambda(X) \leq 1)
 \]
 
 There are two other important flows, the geodesic flow and the horocyclic flow.
-First there is a natural homeomorphism between $T^1 \mathbb{H}  \simeq PSL_2(\mathbb{R})$, since $PSL_2(\mathbb{R})$ act simply trasnsitively on it. This morphism can be choosen up to a conjugaison via an other element of $PSL_2(\mathbb{R})$. We we will be interested in a special kind of subgroup.
+First there is a natural homeomorphism between $T^1 \mathbb{H}  \simeq SL_2(\mathbb{R}) / SO_2(\mathbb{R})$, since $SL_2(\mathbb{R}) / SO_2(\mathbb{R})$ act simply trasnsitively on it. This morphism can be choosen up to a conjugaison via an other element of $SL_2(\mathbb{R}) / SO_2(\mathbb{R})$. We we will be interested in a special kind of subgroup.
 
 \begin{dfnt}
-A fuchsian group $\Gamma$ is a finitely generated and discrete subgroup of $PSL_2(\mathbb{R})$. Then $\Gamma$ act discontinuously on $\mathbb{H}$.
+A \emph{fuchsian group} $\Gamma$ is a finitely generated and discrete subgroup of $SL_2(\mathbb{R})$. Then $\Gamma$ act discontinuously on $\mathbb{H}$.
 \end{dfnt}
 
-Then a Hyperbolic surface can be represented as $PSL_2(\mathbb{R})/ \Gamma$. If $U$ is a one parameter subgroup of $PSL_2{\mathbb{R}}$ it act on the quotient.
+Then a Hyperbolic surface can be represented as $\mathbb{H}/ \Gamma = SL_2(\mathbb{R}) / SO_2(\mathbb{R}) / \Gamma$. If $U$ is a one parameter subgroup of $SL_2{\mathbb{R}}$ it act on the quotient.
 
 There are two important exemple:
 
 \begin{dfnt}
-The geodesic flow is a flow on the Teichmuller space given by the action of the diagonal matrices\[
+The \emph{geodesic flow} is a flow on the Teichmuller space given by the action of the diagonal matrices\[
 u_t=\begin{pmatrix}
 e^t & 0 \\
 0 & e^{-t}
@@ -279,7 +340,7 @@ e^t & 0 \\
 \end{dfnt}
 
 \begin{dfnt}
-The horocycle flow is a flow on the bundle of nonzero quadratic differential, $\mathcal{QD}$, of the Teichmuller space given by the unipotent action of \[
+The \emph{horocycle flow} is a flow on the bundle of nonzero quadratic differential, $\mathcal{QD}$, of the Teichmuller space given by the unipotent action of \[
 u_t=\begin{pmatrix}
 1 & t \\
 0 & 1
@@ -289,12 +350,14 @@ u_t=\begin{pmatrix}
 
 The geodesic flow is also the flow that we obtain by following geodesic line on $\mathbb{H}$ and the horocycle is the flow we obtain by following curves which are everywhere orthogonal to the geodesic, which is the horizotal line and the circle tangent to the real line.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=6cm]{Image/FlowPaint.png}
-\caption{Representation of the horocycle flow, in green, and the geodesic flow, in red}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\includegraphics[width=6cm]{Image/FlowPaint.png}
+%\caption{Representation of the horocycle flow, in green, and the geodesic flow, in red}
+%\end{figure}
 
+
+\input{Image/Flow.tex}
 
 An important relation is how this two flows interact between each other \[
 \begin{pmatrix} e^t & 0 \\ 0 & e^{-t}\end{pmatrix} u_t=\begin{pmatrix} 1 & s \\ 0 & 1 \end{pmatrix} \begin{pmatrix} e^{-t} & 0 \\ 0 & e^{t}\end{pmatrix}=
@@ -307,63 +370,25 @@ So the the conjugaison of the horocyclic flow by the geodesic one is still the h
 \includegraphics[width=6cm]{Image/Commutatoin.png}
 \caption{The conjugaison of the horocycle flow by the geodesic one.}
 \end{figure}
+%TODO remplacer les images
+%Input
 
-%TODO faire l'exercice du pdf sur les flots.
+%QUESTION faire l'exercice du pdf sur les flots.
 
-\subsection{Decomposition of hyperbolic surface}
-
-One way to construct all hyperbolic surface is to decompose them in elementary piece, that we will call pair of pant.
-
-A hyperbolic geometric exercice show that a hexagone which side are geodesics and with right angles is determined by the lenght of three sides which are not consecutifs.
-%TODO Faire cette exercice
-
-\begin{figure}
-\centering
-\includegraphics[width=12cm]{Image/PairOfPant.jpg}
-\end{figure}
-
- On the image above $\gamma_i$, $\gamma_j$ and $\gamma_k$ determined the hexagone. Then we can glued them to have a pair of pant.
-
- \begin{dfnt}
- A pair of pant is a hyperbolic surface with three geodesic boundaries and no ponctured.
- \end{dfnt}
-
-\begin{rmq}
-The pair of pant is uniquely determined by the lenght of the three boundarie geodesics.
-\end{rmq}
-%TODO mettre la preuve
-
-\begin{rmq}
-The lenght of one or more geodesic can go to zero and the boundaries become a ponctured.
-\end{rmq}
-
-We can now decompose, with the following theorem, all hyperbolic surfaces in a collection of pair of pants.
-
-\begin{thm}
-Let $S$ be a surface of genus $g$ and with $n$ ponctured. There is a set of $3g-3+n$ simple closed curves $(\gamma_1,...,\gamma_{3g-3+n})$ such that $S\ \Cup \gamma_i$ is a disjoint collection of pair of pants.
-\end{thm}
+We give the definition of a third flow that we will used in demonstration of the ergodicity of the two previous one.
 
 \begin{dfnt}
-Given a surface $S$ and a pant decomposition $\gamma_1,...,\gamma_{3g-3+n}$, we have a map \[
-\mathcal(S) \rightarrow (\mathbb{R^{+}}^{3g-3+n},\mathbb{R}^{3g-3+n}) \\
-X \mapsto (l_{\gamma_1}(X),...,l_{\gamma_{3g-3+n}}(X),\tau_{\gamma_1}(X),...,\tau_{\gamma_{3g-3+n}}(X))
+The \emph{rotational flow} is a flow on the bundle of nonzero quadratic differential, $\mathcal{QD}$, of the Teichmuller space given by the action of \[
+e_{\theta}=\begin{pmatrix}
+cos(\theta) & sin(\theta) \\
+-sin(\theta) & cos(\theta)
+\end{pmatrix}
 \]
-This map is injective and is call the Fenchel-Nielsen cordinates.
-%TODO demontrez ça ?
 \end{dfnt}
 
-\begin{thm}
-There is a collection $\delta_{1},...,\delta{9g-9}$ of simple closed curves such that $\mathcal{T}_{g} \to \mathbb{R}^{9g-9}$ is injective.
-\end{thm}
-\begin{proof}
-Let take $(\gamma_1,...,\gamma_{9g-9})$ a decomposition in pair of pants, $(\alpha_1,...,\alpha_{9g-9})$ be a collection of simple closed curves such that $i(\gamma_i,\alpha_i) > 0$ and $i(\gamma_i,\alpha_j)=0$ for $i \neq j$, finnely we take $\beta_i=D_{\gamma_i}(\alpha_i)$. We want to show that the length of this collection of $9g-9$ curves determined the hyperbolic structure $X \in \mathcal{T}_g$.
-$X$ already has the Fenchel-Nielsen coordinate, of the pant decomposition $(\gamma_1,...,\gamma_{3g-3})$, $(l_{\gamma_1}(X),\tau_{\gamma_1}(X),...,l_{\gamma_{3g-3}}(X),\tau_{\gamma_{3g-3}}(X))$ so we need only to show that the parameters $\tau_{\gamma_i}(X)$ are determined by the lenght of the collection. Up to a renormalisation we can take $\tau_{\gamma_i}(X)=0$ for every $i$. Now let's take $t=(t_1,...,t_{3g-3}) \in \mathbb{R}^{3g-3} \backslash 0$.
-We will note $X_t$ the hyperbolic geometry which has the same length as $X$ and twist parameters $t$ in the Fenchel-Nielsen coordinate of the pair of pants. So $X_0 = X$. We will consider the function $A(t)=l_{\alpha_1}(X_t)$ and $B(t)=l_{\beta_1}(X_t)$. This function depend only of $t_1$ as $i(\gamma_i,\alpha_j)=0$ for $i \neq j$. Moreover they are strictly convex and by definition we have $A(t_1+l_(\gamma_1)(X))= B(t_1)$. We will show that there is no $t_1 \neq 0$ such that $A(t_1)=A(0)$ and $B(t_1)=B(0)$ that is $A(t_1+l_(\gamma_1)(X))=A(l_(\gamma_1)(X))$. We will note $s=t_1$ and $L=l_(\gamma_1)(X)$
-Suppose there is $s \neq 0$ such that $A(s)=A(0)$, we can take $s > 0$, the other case is symetric. If $s < L$, then by convexity for every $t \in ]0;s[$, $A(t) < A(0)=A(s)$ and $A$ is stricty increasing after $s$ so as $s < L < L+s$ we have $A(L)< A(L+s)$.
-If $s > L$, then $L < s < L+s$ and  $A(L) < A(L+s)$. The final case $s=L$ is also impossible since we would have $A(0)=A(L)=A(2L)$.
-Finally we can make the same argument for the other twist parameters which conclude the proof.
-\end{proof}
-%TODO rajouter une belle image, redécaler tout pour que ça soit logique
+We have the relation \[
+h_s=e_{\theta}g_t e_{\pi+\theta}
+\]
 
 \subsection{The collaring theorem}
 
@@ -391,13 +416,13 @@ This quantity will code a long in the "tube" generate by a simple closed geodesi
 Let $\gamma$ be a simple closed geodesic of length $l$ on a hyperbolic surface $X$. If the $\delta$-neighborhood \[
 A_\delta(\gamma):= \{ x \in X | d(x,\gamma) < \delta \}
 \]
-is isometric to the $\delta$-neighbohood of the unique simple closed geodesic on the cylinder of modulus $\frac{\pi}{l}$, we say that $\gamma$ admit a $\delta$-collar
+is isometric to the $\delta$-neighbohood of the unique simple closed geodesic on the cylinder of modulus $\frac{\pi}{l}$, we say that $\gamma$ admit a \emph{$\delta$-collar}
 , or that $A_\delta(\gamma)$ is the $\delta$-collar of $\gamma$.
 \end{dfnt}
 
 We can now state a useful theorem.
 
-\begin{thm}
+\begin{thm}\label{ColLem}
 Let $X$ be a complete hyperbolic surface, and let $\Gamma:={\gamma_1,...}$ be a collection of disjoint simple closed geodesic, each $\gamma_i$ of length $l_i$. Then $A_{\eta(l_i)}(\gamma_i)$ are collars around the $\gamma_i$, and they are disjoint.
 \end{thm}
 
@@ -409,7 +434,7 @@ Now cutting along this curve we have a set of pair of pant so we only have to sh
 \begin{figure}[h!]
 \centering
 \includegraphics[width=12cm]{Image/CollarProof.jpg}
-\caption{image from \cite{hubbard:hal-01297628}}
+\caption{image from \cite{hubbardhal01297628}}
 \end{figure}
 
 Since $a'$ and $b'$ have the common perpendicular $C'$, they do not intersect and similarly for $a''$ and $b''$. The theorem follow easly by the definition of the function $\eta$.
@@ -435,5 +460,7 @@ Let $X$ be a complete hyperbolic surface, $\gamma$ a simple closed geodesic on $
 \end{cor}
 
 \begin{proof}
-Suppose the geodesic $\delta$ enters $A_{\gamma}$. We can lift the situation in the universal cover of the hyperbolic disc, where $\tilde{\gamma}$ is a lift of $\gamma$ can be a diameter of the circle. Then if $\tilde{\delta}$ do not intersect $\tilde{\gamma}$ and do not have the same point at infinity, then its two endpoint are on the same side of $\tilde{\gamma}$ in the disc. Now the translation along $\tilde{\gamma}$ of length $l_{\gamma}(X)$ is in the representation of $\pi_1(X)$. If $\tilde{\delta}$ intersect $A_{\gamma}$ then by the definition of $\delta$ it will intersect with its image by the translation cited before and hence is not simple in $X$.
+Suppose the geodesic $\delta$ enters $A_{\gamma}$. We can lift the situation in the universal cover of the hyperbolic disc, where $\tilde{\gamma}$ is a lift of $\gamma$ can be a diameter of the circle. Then if $\tilde{\delta}$ do not intersect $\tilde{\gamma}$
+and do not have the same point at infinity, then its two endpoint are on the same side of $\tilde{\gamma}$ in the disc. Now the translation along $\tilde{\gamma}$ of length $l_{\gamma}(X)$ is in the representation of $\pi_1(X)$.
+If $\tilde{\delta}$ intersect $A_{\gamma}$ then by the definition of $\delta$ it will intersect with its image by the translation cited before and hence is not simple in $X$.
 \end{proof}

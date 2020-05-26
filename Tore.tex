@@ -27,7 +27,7 @@ where $C_1(L)$, $C_2(L)$ both limits to $4$ when $p$, $q$ are fixed and $L$ goes
 Let $R(L)$ be the length of the shortest geodesic arc with endpoints on $\gamma$. We have \[
 R(L)= 2 log(coth(L/4))=2 log(\frac{e^{l/2}+1}{e^{l/2}-1})
 \]
-By the collar lemma. %TODO une référence interne bien sympa
+By the collar lemma \ref{ColLem}.
 Then if we take $\alpha$ a simple closed curve that intersect $\gamma$, $q$ times exactly, we obtain the following inequality with $a=l_\alpha(X)$ \[
 q R(a) < L < q R(a) + \frac{qa}{2}
 \]
@@ -38,7 +38,8 @@ As $a \rightarrow 0$ then $L \rightarrow \infty$
 \[
 C_1(L) e^{\frac{-L}{2q}} < a < C_2(L) e^{\frac{-L}{2q}}
 \]
-To complete the proof , we need to show that the length of $\alpha$ is shorter than any other géodesic closed curves, but with the collar lemma there is only one systole whose length goes to $0$ and this is the case for $\alpha$ as $L \rightarrow \infty$. %TODO detailler la preuve
+To complete the proof , we need to show that the length of $\alpha$ is shorter than any other géodesic closed curves, but with the collar lemma there is only one systole whose length goes to $0$ and this is the case for $\alpha$ as $L \rightarrow \infty$.
+%TODO detailler la preuve
 
 If we don't don any approximation we have \[
 2 ln(\frac{1+e^{-L/2q}}{1-e^{-L/2q}}) < a
