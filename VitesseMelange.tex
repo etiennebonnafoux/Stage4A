@@ -106,6 +106,49 @@ L_X v =lim_{t \to 0} \frac{T(exp tX)v-v}{t}
 \]
 \end{dfnt}
 
+Now if $\Gamma$ is a fushian group, $SL_2(\mathbb{R})$ act on the hyperbolic surface with its measure $(X,\mu)$ as seen as $\mathbb{H}/ \Gamma$.
+Then it will also act by a representation $\rho$ on $L^2_0(X,\mu)$ the space of zero average function on the surface.
+
+We want to study the decorellation induce by some subgroup of $SL_2(\mathbb{R})$. It will link with this quantity.
+
+\begin{dfnt}
+Let $\phi$ and $\psi$ be zero-mean functions in $L^2$, the \emph{matrix coefficient} $C_{\phi,\psi}$ is\[
+g \mapsto |<\phi, \rho(g) \psi>|
+\]
+\end{dfnt}
+
+\begin{rmq}
+As the horocyclic flow and the geodesic flow are mixing we have $C_{\phi,\psi}(e_t) \to 0$ and $C_{\phi,\psi}(h_s) \to 0$ for all functions $\phi$ and $\psi$.
+\end{rmq}
+
+We can decompose this representation as an integrale of irreductible representation \[
+L^2_0(X,\mu)=\int H_\zeta d \nu(\zeta)
+\]
+With $\rho_{\zeta}$ the representation oh $H_{\zeta}$.
+
+This set of representation decompose in three part. \begin{enumerate}
+\item The principal serie
+\item The discrete serie
+\item The complementary serie
+\end{enumerate}
+
+This decomposition is given by the spectrum of the Casimir operator on each $H_\zeta$.
+The discrete part of the spectrum is the discrete series, and if $q$ is the iegenvalue, the part $q \geq 1/4$ is the principal series and $q < 1/4$ the complemetary series. This decomposition was studied by Bargmann in \cite{10.2307/1969129}.
+
+So we can decompose $\nu=\nu_p + \nu_d + \nu_c$.
+
+Moreover we now that if $\rho_\zeta$ is in the complementary series, there exist $s=s(\zeta) \in ]0;1[$ such that the representation is isomorphic to the representation $\pi_s$ on the Hilbert sapce \[
+\mathcal{H}_s =
+\{ f:\mathbb{R} \to \mathbb{C}
+, \|f \|^2 = \int_{\mathbb{R} \times \mathbb{R}}
+ \frac{f(x) \bar{f(y)}}{|x_y|^{1-s}}dxdy < \infty\}
+\]
+With the action \[
+pi_s \begin{pmatrix}a & b \\c & d \end{pmatrix}f(x)=\frac{1}{(cx+d)^{1+s}}f(\frac{ax+b}{cx+d0})
+\]
+The representation $rho$ is isolated from the trivial representation if and only if there exist $\epsilon >0$ such that $s(\zeta)<1-\epsilon$ for $\nu_c$ almost every $\zeta$.
+
+
 The Lie algebra of $SL(2,\mathbb{R})$, is the vector space of $2 \times 2$ matrice with zero trace. A basis for this space is \[
 W=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, Q=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, V=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 \]
@@ -119,21 +162,24 @@ If $T$ is irreductible then $\Omega_T$ is a scalar multiple of the identity, i.e
 
 for some $\lambda=\lambda(T)\in \mathbb{R}$ and all $C^2$-vectors $v \in H(T)$
 
-If $\Gamma$ is a lattice of $SL(2,\mathbb{R})$, $\Omega_T$ create an operator $\Delta$ on $\Gamma \backslash SL(2,\mathbb{R})$. We call $\Lambda(\Delta)$ its spectrum and\[
-A(\Gamma)=\Lambda(\Gamma) \cup ]-1/4;0[
-B(\Gamma)=sup A(\Gamma)
-C(\Gamma)= -1 + \sqrt{1+4 B(\Gamma)}
-\]
+If $\Gamma$ is a lattice of $SL(2,\mathbb{R})$, $\Omega_T$ create an operator $\Delta$ on $\Gamma \backslash SL(2,\mathbb{R})$. We call $\Lambda(\Delta)$ its spectrum and
+\begin{enumerate}
+\item $A(\Gamma)=\Lambda(\Gamma) \cup ]-1/4;0[$
+\item $B(\Gamma)=sup A(\Gamma)$
+\item $C(\Gamma)= -1 + \sqrt{1+4 B(\Gamma)}$
+\end{enumerate}
 
 We can now write the theorem about the decay of correlation.
 
 \begin{thm}
 Let $\Gamma$ be a lattice in $SL(2,\mathbb{R})$, $M=\Gamma \backslash G$ and $T$ be the regular representation of $G$ on $L^2 (M, \mu)$. Let $v,w\in K(T,p)$, $p>0$, $<w,1>=0$ and $B(t)=<v,w \circ g_t>$, $C(t)=<v,w \circ h_t>$.
-Then there exist $t_0=t_0(\Gamma)>0$ such that for all $|t| \geq t_0$ and some $E,F > 0$\[
-|B(t)| \leq E( b(|t|))^{\alpha(p)}
-|C(t)| \leq F( b(ln|t|))^{\alpha(p)}
-\]
+Then there exist $t_0=t_0(\Gamma)>0$ such that for all $|t| \geq t_0$ and some $E,F > 0$
+\begin{enumerate}
+\item $|B(t)| \leq E( b(|t|))^{\alpha(p)}$
+\item $|C(t)| \leq F( b(ln|t|))^{\alpha(p)}$
+\end{enumerate}
 where
+
 \begin{enumerate}
 \item $b(t)=e^{\sigma(\Gamma)}$ if $A(\Gamma) \neq \emptyset$
 \item $b(t)=e^{-t}$ if $A(\Gamma) = \emptyset$, $sup(\Lambda \cap ]- \infty; -1/4[) < -1/4$ and $-1/4$ is not an eigenvalue of $\Omega$
