@@ -1,21 +1,30 @@
-A torus can not have a hyperbolic structure, it has naturally a flat structure as the quotient $\mathbb{R}^2 / \mathbb{Z}^2$.
-This changes when one study the one ponctured torus. It is a torus $S$ where we choose a point $p$ and remove it (or just marked it).
+We will now study the most simple hyperbolic surface the once punctured torus.
+A usual torus can not have a hyperbolic structure, it has naturally a flat structure as the quotient $\mathbb{R}^2 / \mathbb{Z}^2$.
+But his changes when one study the one punctured torus. It is a torus $S$ where we choose a point $p$ and remove it (or just marked it).
+
 
 The construction of this object can be done in two manier at least.
-For the first construction, one have to choose a hyperbolic octogone where one side have length $0$ and the two other one $l$, then we sew the border of two of this octogone which give a pair of pant. Finally we can glued with a twist $\tau$ to have the one ponctured torus.
+For the first construction, we give a fundamental domaine in the upper half plane. It is a hexagone with two vertex "at infinity" on the real line. We glue each arc to the symetric one.
 
-A second construction is given by the representation. Given two hyperbolic isomorphism of $\mathbb{H}$ $A$ and $B$ with different fixed point on $\delta \mathbb{H}$ and with $H := ABA^{-1}B^{-1}$ the commutator should be a parabolic element.
-
-A fundamental domaine is given by the following image:
-
-
-%\includegraphics{Image/OnceTorusFundamentalDomaine.jpg}
 \input{Image/FundamentalDomain.tex}
 
+A second construction is given by the representation of the fushian group. Given two hyperbolic isomorphism of $\mathbb{H}$ $A$ and $B$ with different fixed point on $\delta \mathbb{H}$. We ask in addition that the commutator $H := ABA^{-1}B^{-1}$ should be a parabolic element.
+
+\subsection{First properties}
+
+The geometry of the one punctured torus make it simple to discuss closed curves and laminations.
+\begin{rmq}
 Given two generators $\alpha$ and $\beta$ of $\pi_1(S)$, two closed curves non homotopically trivial which intersect one, one can parametrize all other lamination.
 Indeed a given lamination $\lambda \in \mathcal{ML}$ is determined by the couple $(i(\alpha,\lambda),i(\beta,\lambda))$ where $i(.,.)$ is the geometric intersection number.
+\end{rmq}
 
-We have this useful lemma to estimate the length of the systole function in the Teichmuller space.
+The collaring is a powerful tool in this situation since two closed curves can not be disjoint. The length of one is bound below by the collar of the other. So we have the following lemma:
+
+\begin{lem}
+If $X$ is a hyperbolic surface with a simple closed curve of lenght inferior at $ln(3+2 \sqrt{2})$, then there is only one simple closed curve representing the systole.
+\end{lem}
+
+Moreover, we have this useful lemma to estimate the length of the systole function in the Teichmuller space.
 
 \begin{lem}
 Pick $\gamma$ a simple closed geodesic, and $X \in \mathcal{T}(S_{1,1)}$, if $X$ has Fenchel-Nielsen coordinate $(L,\frac{p}{q})$ with respect to $\gamma$, where $gcd(p,q)=1$ and $\frac{p}{q} \in ]0;1[$, then \[
@@ -39,54 +48,135 @@ As $a \rightarrow 0$ then $L \rightarrow \infty$
 \[
 C_1(L) e^{\frac{-L}{2q}} < a < C_2(L) e^{\frac{-L}{2q}}
 \]
-To complete the proof , we need to show that the length of $\alpha$ is shorter than any other géodesic closed curves, but with the collar lemma there is only one systole whose length goes to $0$ and this is the case for $\alpha$ as $L \rightarrow \infty$.
+To complete the proof , we need to show that the length of $\alpha$ is shorter than any other geodesic closed curves, but with the collar lemma there is only one systole whose length goes to $0$ and this is the case for $\alpha$ as $L \rightarrow \infty$.
 %TODO detailler la preuve
 
-If we don't don any approximation we have \[
-2 ln(\frac{1+e^{-L/2q}}{1-e^{-L/2q}}) < a
-\]
-
+%If we don't do any approximation we have \[
+%2 ln(\frac{1+e^{-L/2q}}{1-e^{-L/2q}}) < a
+%\]
 \end{proof}
 
-\begin{thm} Let $\nu(S_{1,1})$ be the finite measure on $\mathcal{P}^1 \mathcal{M}(S_{1,1})$. Then \[
-\nu(S_{1,1})\{ (X,\lambda) \in \mathcal{P}^1 \mathcal{M}(S_{1,1}) | l_{sys}(X,\lambda) < \epsilon \} = O(\frac{\epsilon}{log \epsilon})
-\] as $\epsilon \rightarrow 0 $
-\end{thm}
+\subsection{Rate of mixing of the Earthquake flow}
 
-%Portion de preuve
-\hrulefill
+If $\rho$ is a positive real number we will note $J(\rho)= \{t \in \mathbb{R} , l_\gamma(t) \leq \rho \}$, where $l_{\lambda,\gamma}(t)=l_{\gamma}(E_t(X,\lambda))$.
 
-Let fix $\epsilon=l_{sys}(X)$, and $T > 0 $, then $\exists N=N(\epsilon,T)$ such that $\forall n \geq N$ \[
-| l_{sys}E_t(X,\lambda)-l_{sys}E_t(X,\frac{\gamma_n}{l_{\gamma_n}(X)})| < \epsilon
-\]
+To shorten the notation we will use $\mu=i(\lambda_p,\gamma)$ and $\epsilon_\gamma = min_{t \in \mathbb{R}} l_\gamma (t)$.
 
-So we calculate $T_n$ such that $\forall |t| < T_n$,
- $l_{sys}E_t(X,\frac{\gamma_n}{l_{\gamma_n}(X)}) < 2 \epsilon$
-and $T=liminf T_n$. If $T>0$, $\exists N_1$ such that $\forall n \geq N_1$, $T_n \geq \frac{T}{2}$.
-
-Then we set $N_2=N(\epsilon,T/2)$ and we have $l_{sys}E_t(x,\lambda) \leq 2.5 \epsilon $, $\forall 0 \leq t \leq T/2$
-
-
-\hrulefill
-
-We have two useful tools to understand the length fonction along a earthquake path.
+The two following lemma can be found in \cite{articleMetW}.
 
 \begin{lem}
-Let $X \in \mathcal{T}(S_g)$, and $\gamma$ a curve which is part of a pant decomposition.
- $\chi_s$
-  is the twist of length $s$ around $\gamma$, and $b$ a closed curve with $i(b,\gamma) > 0$ then $s \mapsto l_{\chi_s}(b)$ is strictly convex.
+$-i(\lambda_p,\gamma) < \frac{d}{dt}l_{p,\gamma}(t) < i(\lambda_p,\gamma)$
 \end{lem}
-\cite{farb2011primer} proposition 10.8
 
-\begin{lem}
-If $\alpha$ is a closed curve, $\gamma$ an other closed curve and $\lambda$ a lamination.\[
-\begin{array}{crcl}
+\begin{lem}\label{LemFra}
 
-\frac{dl_{\alpha}}{dt}(0) & = & \sum_{p_i \in \alpha \cap \gamma} cos(\theta_{p_i}) \\
-
-\frac{dl_{\alpha}}{dt}(0) & = & \int_{ \alpha} cos(\theta) d \theta
-
-\end{array}
+There are constants $\rho$ and $C$, depending only on $S$, such that for any $(X, \lambda) \in \mathcal{PT}^1$,$\gamma \in \Gamma^S$
+and all $t\in J(\rho)$, \[
+\mu |t-t_\gamma |-C \epsilon_\gamma \leq l_{\lambda,\gamma}(t) \leq \mu |t- t_\gamma | + \epsilon_\gamma
 \]
+
 \end{lem}
-\cite{NielsenRealizationPro} Corollary 3.3 and 3.4
+
+We now fix a $\epsilon$, such has $2 \epsilon(2+C) < min( \rho , ln(3+2 \sqrt{2}))$ and a $\mu$. Let \[
+C_{\epsilon,\mu}=\{ (X,\lambda) \in \mathcal{T}(S) \times \mathcal{ML},l_{sys}(X) \in  [\frac{\epsilon}{2};\epsilon], i(\lambda,\gamma) \in [-\mu,\mu]  \}
+\]
+where $\gamma$ is the closed curve representing the systole. Moreover, let $D$ be the set $\{ (X,\lambda) \in \mathcal{T}(S) \times \mathcal{ML},l_{sys}(X) > ln(3+2 \sqrt{2}) \} $.
+
+So let $X$ be a hyperbolic surface in $C_{\epsilon,\mu}$. The systole of this surface is $\gamma$ and has length $\tilde{\epsilon}$
+When we earthquake $X$ along $\lambda$, the length function will reach a minimum value $\epsilon_\gamma$ at the time $t_\gamma$. Using the inequalities of lemma \ref{LemFra}, we find that \[
+\frac{\tilde{\epsilon}-\epsilon_\gamma}{\mu} \leq |t_\gamma | \leq \frac{\tilde{\epsilon} + C \epsilon_\gamma}{\mu}
+\]
+and as $0 < \epsilon_\gamma \leq \tilde{\epsilon}$ we have $|t_\gamma| \in [0; \frac{\tilde{\epsilon}}{\mu}(1+C)]$. Injecting this in the right-hand side of inequality of lemma \ref{LemFra}, we get: \[
+l_\gamma (E_t (X,\lambda)) \leq \tilde{\epsilon} (2+C) +\mu |t|
+\]
+
+Hence, for all $|t| \leq \frac{\epsilon}{\mu}(2+C) = t_{lim}$ we have that $l_\gamma(E_t(X,\lambda)) \leq 2 \epsilon (2+C)$.
+
+Let $f_{\epsilon,\mu}$ a $C^1$ positive function with support include in $C_{\epsilon,\mu}$, $\int f_{\epsilon,\mu} > Vol(C_{\epsilon,\mu})/2$.
+
+We take also $g$ a positive $C^1$ function with support in $D$, $K_1= \int g$ and $\| g \|_{C^1}= K_2$.
+So we have:\[
+|\int f_{\epsilon,\mu} \circ E_{t_{lim}} g - \int f_{\epsilon,\mu} \int g |=K_1 \int f_{\epsilon,\mu}
+\]
+
+If we have exponential mixing, we would have two constants $\tau'$ and $K_3$ such that \[
+\frac{Vol(C_{\epsilon,\mu})}{2}K_1 \leq K_1 \int f_{\epsilon,\mu}
+< K_2 K_3 \| f_{\epsilon,\mu} \|_{C^1} e^{-\epsilon \frac{2+C}{\mu \tau'}}
+\]
+
+Or more simply \begin{equation}
+Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{C^1} e^{-\frac{\epsilon}{\mu \tau}}
+\label{equ}
+\end{equation}
+
+We should now understand the volume of $C_{\epsilon,\mu}$ and the $C^1$ norm of $f_{\epsilon,\mu}$. Note that we are interested in an upper bound of the norm and a lower bound of the volume.
+
+We could choose $f_{\epsilon,\mu}$ such that
+$B \frac{1}{\epsilon \mu} \leq \| f_{\epsilon,\mu} \|_{C^1} \leq A \frac{1}{\epsilon \mu}$.
+
+To estimate the volume of $C_{\epsilon,\mu}$, and following \cite{fu2015cusp}, we use the fact that the measure $\nu$ restricted to the space of unit-length measured laminations is equal to the Thurston volume of the unit ball.
+
+If $\alpha$ is another simple closed curve which intersect only one time $\gamma$, $\lambda$ is determined by $(i(\gamma,\lambda),i(\alpha,\lambda))$. We will note $r(\theta)$ the reciprocal length of the measure lamination $(cos(\theta),sin(\theta))$.
+So we want to integrate \[
+Int(\mu)=\int_{-\mu}^{\mu} \int_0^{r(\theta)}r dr d \theta
+\]
+
+We will note $R(l)=2ln(coth(l/4))=2ln(\frac{e^{l/2}+1}{e^{l/2}-1})$. Then as in \cite{fu2015cusp}, we have that:
+
+\begin{note}
+The length of the measured lamination $(cos(\theta),sin(\theta))$ is bounded between
+
+$max(R(\epsilon)|cos(\theta)|,\epsilon |sin(\theta)|)$ and $(R(\epsilon)|cos \theta | + \epsilon |sin \theta |)$.
+\end{note}
+
+So if $\mu \leq Arctan(\frac{R(\epsilon)}{\epsilon})$, $\frac{1}{R(\epsilon)|cos(\theta)|} \leq r(\theta)$ and \[
+\frac{1}{2 R(\epsilon)^2} \int_{-\mu}^\mu \frac{1}{cos(\theta)^2}=\frac{tan(\mu)}{R(\epsilon)^2}\leq Int
+\]
+
+\begin{note}
+The condition $\mu \leq Arctan(\frac{R(\epsilon)}{\epsilon})$ is not a problem since $R(\epsilon)$ and $\frac{1}{\epsilon}$ are two decreasing functions we have \[
+Arctan(\frac{R(ln(3+2 \sqrt{2}))}{ln(3+2 \sqrt{2})}) \leq Arctan(\frac{R(\epsilon)}{\epsilon})
+\]
+And this will not influence asymptotic considerations.
+\end{note}
+
+Then \[
+ \frac{\epsilon}{2} \frac{\epsilon /2}{1+e^{\epsilon /2}} \frac{tan(\mu)}{R(\epsilon /2)^2}
+ \leq \int_{\epsilon/2}^\epsilon \frac{l}{1+e^l}\frac{ tan(\mu)}{R(l)^2}dl
+ \leq  \int_{\epsilon/2}^\epsilon \frac{l}{1+e^l} Int(\mu) dl
+\]
+as the function $l \mapsto \frac{l}{1+e^l}\frac{1}{R(l)^2}$ is increasing near $0$. Making other small simplification we find: \[
+C \mu \frac{\epsilon^2}{log(\epsilon)^2} \leq  Vol(C_{\epsilon,\mu})
+\]
+
+Injecting the volume and the norm in \ref{equ} we find,
+ \[
+\frac{\mu \epsilon^2}{log(\epsilon)^2} \leq K \frac{1}{\epsilon \mu} e^{\frac{- \epsilon}{\mu \tau'}}
+\]
+with two synthetic constants $K$ and $\tau'$.
+
+Then we choose $\mu = \epsilon^2$, we have \[
+\epsilon^7 \leq K log(\epsilon )^2 e^{- \frac{1}{\epsilon \tau'}}
+\]
+for every $\epsilon$ small enough which is impossible.
+
+
+Now let try to put a polynomial decay rate. We change the inequality \ref{equ} in
+\begin{equation}
+Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{C^1} (\frac{\epsilon}{\mu})^{-\gamma}
+\label{poly}
+\end{equation}
+Where $\gamma \in \mathbb{R^{+*}}$.
+
+And injecting the estimates of the volume and the norm in \ref{poly}, we have:
+
+\[
+\mu \frac{\epsilon^2}{log(\epsilon)^2}  < K \frac{1}{\epsilon \mu} (\frac{\epsilon}{\mu })^{- \gamma}
+\]
+ Taking $\mu=\epsilon^{\delta}$ with $\delta$  a positive constant we find: \[
+\frac{\epsilon^{2+\delta}}{log(\epsilon)^2} \leq \frac{K}{\epsilon^{1+\delta}}(\epsilon^{1-\delta})^{-\gamma}
+\]
+Hence \[
+\epsilon^{3+\gamma+2 \delta - \gamma \delta} \leq K log(1/ \epsilon)^2
+\]
+This can only happen if $3+\gamma+2 \delta - \gamma \delta \geq 0$ and so $\gamma \leq 2$.
