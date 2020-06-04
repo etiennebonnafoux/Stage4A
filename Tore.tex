@@ -21,7 +21,7 @@ Indeed a given lamination $\lambda \in \mathcal{ML}$ is determined by the couple
 The collaring is a powerful tool in this situation since two closed curves can not be disjoint. The length of one is bound below by the collar of the other. So we have the following lemma:
 
 \begin{lem}
-If $X$ is a hyperbolic surface with a simple closed curve of lenght inferior at $ln(3+2 \sqrt{2})$, then there is only one simple closed curve representing the systole.
+If $X$ is a hyperbolic surface homeomorph to the once punctured torus with a simple closed curve of lenght inferior at $ln(3+2 \sqrt{2})$, then there is only one simple closed curve representing the systole.
 \end{lem}
 
 Moreover, we have this useful lemma to estimate the length of the systole function in the Teichmuller space.
@@ -62,11 +62,23 @@ If $\rho$ is a positive real number we will note $J(\rho)= \{t \in \mathbb{R} , 
 
 To shorten the notation we will use $\mu=i(\lambda_p,\gamma)$ and $\epsilon_\gamma = min_{t \in \mathbb{R}} l_\gamma (t)$.
 
-The two following lemma can be found in \cite{articleMetW}.
 
-\begin{lem}
+Kerckoff show in \cite{NielsenRealizationPr} the following proprities of the earthquake flow.
+
+\begin{prop}
+For every $(x,\lambda) \in \mathcal{PT}^1$ and every $\gamma \in \Gamma^S$, the function $l_{\lambda,\gamma}: t \mapsto l_\gamma(E_t(x,\lambda))$ is $C^1$ and convex.
+
+If $i(\gamma,\lambda)=0$ then l_{\lambda,\gamma} is constant, and if $i(\gamma,\lambda)>0$ then $l_{\lambda,\gamma}$ is proper, with derivative strictly increasing and given by \begin{equation}
+\frac{d}{dt}l_{\lambda,\gamma}(t)= \int_{\gamma_t}cos(\theta_{y,t})d \lambda(y)
+\end{equation}
+Here $\gamma_t$ is the geodesic representative of $\gamma$ in $E_t(X,\lambda)$, and $\theta_{\gamma,t}$ is the angle of the intersection between $\lambda$ and $\gamma_t$.
+\end{prop}
+
+With this proposition we can easily show that \[
 $-i(\lambda_p,\gamma) < \frac{d}{dt}l_{p,\gamma}(t) < i(\lambda_p,\gamma)$
-\end{lem}
+\]
+
+The following lemma can be found in \cite{articleMetW}.
 
 \begin{lem}\label{LemFra}
 
@@ -159,4 +171,4 @@ Then we need to calculate the different Lipschitz norms of this function.
 
 To estimate the volume of $C_{\epsilon,\mu}$, and following \cite{fu2015cusp}, we use the fact that the measure $\nu$ restricted to the space of unit-length measured laminations is equal to the Thurston volume of the unit ball.
 
-When we will have the two previous estimation, we would know if the earthquake flow has exponential mixing rate or polynomial rate and a bound of the degree of the polynome in the last case. 
+When we will have the two previous estimation, we would know if the earthquake flow has exponential mixing rate or polynomial rate and a bound of the degree of the polynome in the last case.
