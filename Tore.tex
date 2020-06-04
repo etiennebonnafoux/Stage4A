@@ -1,10 +1,10 @@
-We will now study the most simple hyperbolic surface the once punctured torus.
+We will now study the most simple hyperbolic surface: the once punctured torus.
 A usual torus can not have a hyperbolic structure, it has naturally a flat structure as the quotient $\mathbb{R}^2 / \mathbb{Z}^2$.
-But his changes when one study the one punctured torus. It is a torus $S$ where we choose a point $p$ and remove it (or just marked it).
+But this changes when one studies the once punctured torus. It is a torus $S$ where we choose a point $p$ and remove it (or just mark it).
 
 
-The construction of this object can be done in two manier at least.
-For the first construction, we give a fundamental domaine in the upper half plane. It is a hexagone with two vertex "at infinity" on the real line. We glue each arc to the symetric one.
+The construction of this object can be done in two ways at least.
+For the first construction, we give a fundamental domain in the upper half plane. It is a hexagon with two vertices "at infinity" on the real line. We glue each arc to its symmetric.
 
 \input{Image/FundamentalDomain.tex}
 
@@ -12,16 +12,16 @@ A second construction is given by the representation of the fushian group. Given
 
 \subsection{First properties}
 
-The geometry of the one punctured torus make it simple to discuss closed curves and laminations.
+The geometry of the one punctured torus makes it simple to discuss closed curves and laminations.
 \begin{rmq}
-Given two generators $\alpha$ and $\beta$ of $\pi_1(S)$, two closed curves non homotopically trivial which intersect one, one can parametrize all other lamination.
+Given two generators $\alpha$ and $\beta$ of $\pi_1(S)$, two closed curves non homotopically trivial which intersect once, one can parametrize all other lamination.
 Indeed a given lamination $\lambda \in \mathcal{ML}$ is determined by the couple $(i(\alpha,\lambda),i(\beta,\lambda))$ where $i(.,.)$ is the geometric intersection number.
 \end{rmq}
 
 The collaring is a powerful tool in this situation since two closed curves can not be disjoint. The length of one is bound below by the collar of the other. So we have the following lemma:
 
 \begin{lem}
-If $X$ is a hyperbolic surface homeomorph to the once punctured torus with a simple closed curve of lenght inferior at $ln(3+2 \sqrt{2})$, then there is only one simple closed curve representing the systole.
+If $X$ is a hyperbolic surface homeomorph to the once punctured torus with a simple closed curve of length inferior to $ln(3+2 \sqrt{2})$, then there is only one simple closed curve representing the systole.
 \end{lem}
 
 Moreover, we have this useful lemma to estimate the length of the systole function in the Teichmuller space.
@@ -41,7 +41,7 @@ By the collar lemma \ref{ColLem}.
 Then if we take $\alpha$ a simple closed curve that intersect $\gamma$, $q$ times exactly, we obtain the following inequality with $a=l_\alpha(X)$ \[
 q R(a) < L < q R(a) + \frac{qa}{2}
 \]
-Reorganizing the termes we have \[
+Reorganizing the terms we have \[
 e^{-a/4}tanh(a/4) < e^{-L/2q} < tanh(a/4)
 \]
 As $a \rightarrow 0$ then $L \rightarrow \infty$
@@ -63,7 +63,7 @@ If $\rho$ is a positive real number we will note $J(\rho)= \{t \in \mathbb{R} , 
 To shorten the notation we will use $\mu=i(\lambda_p,\gamma)$ and $\epsilon_\gamma = min_{t \in \mathbb{R}} l_\gamma (t)$.
 
 
-Kerckoff show in \cite{NielsenRealizationPr} the following proprities of the earthquake flow.
+Kerckoff show in \cite{NielsenRealizationPro} the following properties of the earthquake flow.
 
 \begin{prop}
 For every $(x,\lambda) \in \mathcal{PT}^1$ and every $\gamma \in \Gamma^S$, the function $l_{\lambda,\gamma}: t \mapsto l_\gamma(E_t(x,\lambda))$ is $C^1$ and convex.
@@ -98,7 +98,8 @@ So let $X$ be a hyperbolic surface in $C_{\epsilon,\mu}$. The systole of this su
 When we earthquake $X$ along $\lambda$, the length function will reach a minimum value $\epsilon_\gamma$ at the time $t_\gamma$. Using the inequalities of lemma \ref{LemFra}, we find that \[
 \frac{\tilde{\epsilon}-\epsilon_\gamma}{\mu} \leq |t_\gamma | \leq \frac{\tilde{\epsilon} + C \epsilon_\gamma}{\mu}
 \]
-and as $0 < \epsilon_\gamma \leq \tilde{\epsilon}$ we have $|t_\gamma| \in [0; \frac{\tilde{\epsilon}}{\mu}(1+C)]$. Injecting this in the right-hand side of inequality of lemma \ref{LemFra}, we get: \[
+and as $0 < \epsilon_\gamma \leq \tilde{\epsilon}$ we have $|t_\gamma| \in [0; \frac{\tilde{\epsilon}}{\mu}(1+C)]$. \\
+Injecting this in the right-hand side of inequality of lemma \ref{LemFra}, we get: \[
 l_\gamma (E_t (X,\lambda)) \leq \tilde{\epsilon} (2+C) +\mu |t|
 \]
 
@@ -108,7 +109,7 @@ Let $f_{\epsilon,\mu}$ a Lipschitz positive function with support include in $C_
 
 We take also $g$ a positive Lipschitz function with support in $D$, $K_1= \int g$ and $\| g \|_{Lip}= K_2$.
 So we have:\[
-|\int f_{\epsilon,\mu} \circ E_{t_{lim}} g - \int f_{\epsilon,\mu} \int g |=K_1 \int f_{\epsilon,\mu}
+\left| \int f_{\epsilon,\mu} \circ E_{t_{lim}} g - \int f_{\epsilon,\mu} \int g \right| =K_1 \int f_{\epsilon,\mu}
 \]
 
 If we have exponential mixing, we would have two constants $\tau'$ and $K_3$ such that \[
@@ -124,7 +125,7 @@ Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{Lip} e^{-\frac{\epsilon}{\mu 
 
 We can also make the hypothesis that the earthquake flow has a polynomial decay rate. We change the inequality \ref{equ} in
 \begin{equation}
-Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{Lip} (\frac{\epsilon}{\mu})^{-\gamma}
+Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{Lip} \left(\frac{\epsilon}{\mu}\right)^{-\gamma}
 \label{poly}
 \end{equation}
 Where $\gamma \in \mathbb{R^{+*}}$.
