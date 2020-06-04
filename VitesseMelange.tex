@@ -5,11 +5,10 @@ We will first give the behavior of two flows we described before.
 \begin{thm}
 The ergodic flow and the horocycle flow are mixing.
 \end{thm}
-
-\cite{Mcmullen1998HyperbolicM}
+The detail of the proof can be found in this course \cite{Mcmullen1998HyperbolicM}.
 
 \begin{proof}
-The step will be in four step, first we will show that the ergodic flow is ergodic, the horocyclic flow is ergodic, the ergodic flow is mixing, finally the horocycle flow is mixing.
+The proof will be in four step, first we will show that the ergodic flow is ergodic, the horocyclic flow is ergodic, the ergodic flow is mixing, finally the horocycle flow is mixing.
 
 \emph{Ergodicity flow is ergodic}
 
@@ -31,8 +30,8 @@ H^s=E^r G^t E^{\pi+r}
 where $r \to 0$ as $t \to \infty$. Since $H^s f=f$,we have for any $T>0$,\[
 f=\frac{1}{T} \int_0^T E^r G^t E^{\pi+r} f dt
 \]
-Thus for every $g\ in L^2(X)$ we have \[
-<g,f> = \int_X g \frac{1}{T} \int_0^T E^r G^t E^{\pi+r}
+Thus for every $g \in L^2(X)$ we have \[
+<g,f> = \int_X g \frac{1}{T} \int_0^T E^r G^t E^{\pi+r} f dt
 \]
 As $r \to 0$ then $t \to \infty$ we can show by controlling the difference that \[
 <g,f> = lim_{t \to \infty} \int_X g \frac{1}{T} \int_0^T G^t E^{\pi} f dt
@@ -45,29 +44,29 @@ This conclude the proof that the horocycle flow is ergodic.
 \emph{Mixing of the geodesic flow}
 
 We have the relation \[
-h^s g^t =g^t h^{s exp(2t)}
+h_s g_t =g_t h_{s e^{2t}}
 \]
 Let us take $f_0,f_1 \in C_0(X)$,
 we have for small $s$ %TODO rendre ca plus rigoureux
 \[
-<f_0,g^t f_1 > \equiv <h^{-s} f_0,g^t f_1 >=<f_0 , h^s g^t f_1 >
-= <f_0 , g^t h^{s exp(2t)} f_1 > = <g^{-t} f_0 , h^{s exp(2t)}f_1>
+<f_0,g_t f_1 > \simeq <h_{-s} f_0,g_t f_1 >=<f_0 , h_s g_t f_1 >
+= <f_0 , g_t h_{s e^{2t}} f_1 > = <g_{-t} f_0 , h_{s e^{2t}}f_1>
 \]
 Now we have for small $s$, \[
-h^{S exp(2t)}f_1 \equiv \frac{1}{S} \int_0^S h^{exp(2t)s} f_1 ds =F_t
+h_{S e^{2t}}f_1 \simeq \frac{1}{S} \int_0^S h_{e^{2t}s} f_1 ds =F_t
 \]
 and for large t, as the horoclic flow is ergodic \[
-F_t = \frac{1}{S} \int_0^S h^{exp(2t)s} f_1 ds \equiv \int_X f_1 = <f_1 , 1 >
+F_t = \frac{1}{S} \int_0^S h_{e^{2t}s} f_1 ds \simeq \int_X f_1 = <f_1 , 1 >
 \]
 So we have \[
-<f_0, g^t f_1 > \equiv <g^{-t} f_0, F_t > \equiv <g^{-t} f_0 ,1 ><f_1,1> = <f_0,1><f_1,1>
+<f_0, g_t f_1 > \simeq <g_{-t} f_0, F_t > \simeq <g_{-t} f_0 ,1 ><f_1,1> = <f_0,1><f_1,1>
 \]
 Which is the mixing of the geodesic flow.
 
 \emph{Mixing of the horocyclic flow}
 
-We use again the relation $h^s = e^r g^t e^{\pi + r}$. \[
-<h^s f_0 , f_1 > = < g^t  e^{\pi+r} f_0, e^{-r} f_1> \equiv <g^t e^{\pi} f_0, f_1
+We use again the relation $h^s = e_r g_t e_{\pi + r}$. \[
+<h_s f_0 , f_1 > = < g_t  e_{\pi+r} f_0, e_{-r} f_1> \simeq <g_t e_{\pi} f_0, f_1>
 \]
 for $t$ large (and so $r$ small). By the mixing propity of the geodesic flow, this quantity converges to $<f_0,1><f_1,1>$, and the horocyclic flow is mixing.
 
@@ -86,12 +85,12 @@ With the conjugacie of Mirzharani, the earthquake flow is conjugated to the horo
 
 \subsection{Rate of mixing of this flows}
 
-Then we want to know at which rate the mixing of the geodesic and horocyclic flow happend. Ratner show in 1986 \cite{ratner_1987} that the geodesic flow is exponnetially mixing and the horocyclic flow has a polynomial rate of mixing. She used representation theory.
+Then we want to know at which rate the mixing of the geodesic and horocyclic flow happend. Ratner show in 1986 \cite{ratner_1987} that the geodesic flow is exponentially mixing and the horocyclic flow has a polynomial rate of mixing. She used representation theory.
 
 We will first give some definition before abording the main theorem.
 
 \begin{dfnt}
-Let $H$ be a  complexe separable Hilbert space, $U(H)$ the group of all unitary transformation of $H$ onto itself and $T: G \to U(H)$ a unitary representation. We note $T(g)=T_g \in U(H)$.
+Let $H$ be a  complexe separable Hilbert space, $U(H)$ the group of all unitary transformation of $H$ onto itself, $G$ a Lie group and $T: G \to U(H)$ a unitary representation. We note $T(g)=T_g \in U(H)$.
 
 An element $v \in H$ is called \emph{a $C^k-vector$} for $T$, $k=0,1,...,\infty$ if $g \mapsto T_g(v)$ is a $C^k$-map from $G$ to the Hilbert space.
 \end{dfnt}
@@ -133,9 +132,9 @@ This set of representation decompose in three part. \begin{enumerate}
 \end{enumerate}
 
 This decomposition is given by the spectrum of the Casimir operator on each $H_\zeta$.
-The discrete part of the spectrum is the discrete series, and if $q$ is the iegenvalue, the part $q \geq 1/4$ is the principal series and $q < 1/4$ the complemetary series. This decomposition was studied by Bargmann in \cite{10.2307/1969129}.
+The discrete part of the spectrum is the discrete series, and if $q$ is the eigenvalue, the part $q \geq 1/4$ is the principal series and $q < 1/4$ the complemetary series. This decomposition was studied by Bargmann in \cite{10.2307/1969129}.
 
-So we can decompose $\nu=\nu_p + \nu_d + \nu_c$.
+So we can decompose the measure $\nu=\nu_p + \nu_d + \nu_c$.
 
 Moreover we now that if $\rho_\zeta$ is in the complementary series, there exist $s=s(\zeta) \in ]0;1[$ such that the representation is isomorphic to the representation $\pi_s$ on the Hilbert sapce \[
 \mathcal{H}_s =
@@ -144,19 +143,19 @@ Moreover we now that if $\rho_\zeta$ is in the complementary series, there exist
  \frac{f(x) \bar{f(y)}}{|x_y|^{1-s}}dxdy < \infty\}
 \]
 With the action \[
-pi_s \begin{pmatrix}a & b \\c & d \end{pmatrix}f(x)=\frac{1}{(cx+d)^{1+s}}f(\frac{ax+b}{cx+d0})
+\pi_s \begin{pmatrix}a & b \\c & d \end{pmatrix}f(x)=\frac{1}{(cx+d)^{1+s}}f(\frac{ax+b}{cx+d})
 \]
-The representation $rho$ is isolated from the trivial representation if and only if there exist $\epsilon >0$ such that $s(\zeta)<1-\epsilon$ for $\nu_c$ almost every $\zeta$.
+The representation $\rho$ is isolated from the trivial representation if and only if there exist $\epsilon >0$ such that $s(\zeta)<1-\epsilon$ for $\nu_c$ almost every $\zeta$.
 
 
-The Lie algebra of $SL(2,\mathbb{R})$, is the vector space of $2 \times 2$ matrice with zero trace. A basis for this space is \[
+So in our case, the Lie algebra of $SL(2,\mathbb{R})$, is the vector space of $2 \times 2$ matrice with zero trace. A basis for this space is \[
 W=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, Q=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, V=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 \]
 Which give the Casimir operator on $C^2$ vectors of $SL(2,\mathbb{R})$, \[
 \Omega_T = (L_v^2+L_Q^2-L_W^2)/4
 \]
 
-If $T$ is irreductible then $\Omega_T$ is a scalar multiple of the identity, i.e. \[
+On a irreductibel part of $T$, $\Omega_T$ is a scalar multiple of the identity, i.e. \[
 \Omega_T v = \lambda v
 \]
 
@@ -172,7 +171,7 @@ If $\Gamma$ is a lattice of $SL(2,\mathbb{R})$, $\Omega_T$ create an operator $\
 We can now write the theorem about the decay of correlation.
 
 \begin{thm}
-Let $\Gamma$ be a lattice in $SL(2,\mathbb{R})$, $M=\Gamma \backslash G$ and $T$ be the regular representation of $G$ on $L^2 (M, \mu)$. Let $v,w\in K(T,p)$, $p>0$, $<w,1>=0$ and $B(t)=<v,w \circ g_t>$, $C(t)=<v,w \circ h_t>$.
+Let $\Gamma$ be a lattice in $SL(2,\mathbb{R})$, $M=\Gamma \backslash SL(2,\mathbb{R})$ and $T$ be the regular representation of $SL(2,\mathbb{R})$ on $L^2 (M, \mu)$. Let $v,w\in K(T,p)$, $p>0$, $<w,1>=0$ and $B(t)=<v,w \circ g_t>$, $C(t)=<v,w \circ h_t>$.
 Then there exist $t_0=t_0(\Gamma)>0$ such that for all $|t| \geq t_0$ and some $E,F > 0$
 \begin{enumerate}
 \item $|B(t)| \leq E( b(|t|))^{\alpha(p)}$
@@ -193,6 +192,10 @@ and $\alpha(p)$ is
 \item $\frac{p}{p+3}$ if $0<p<1$
 \end{enumerate}
 \end{thm}
+
+\begin{rmq}
+We are only interseted in function in $L^2(X,\mu)$ which depend only on the footprint of the tangent space and are constant on the tangent space. This implie that they are all in $K(T,\infty)$.
+\end{rmq}
 
 %TODO refaire en dessous
 

@@ -92,91 +92,71 @@ l_\gamma (E_t (X,\lambda)) \leq \tilde{\epsilon} (2+C) +\mu |t|
 
 Hence, for all $|t| \leq \frac{\epsilon}{\mu}(2+C) = t_{lim}$ we have that $l_\gamma(E_t(X,\lambda)) \leq 2 \epsilon (2+C)$.
 
-Let $f_{\epsilon,\mu}$ a $C^1$ positive function with support include in $C_{\epsilon,\mu}$, $\int f_{\epsilon,\mu} > Vol(C_{\epsilon,\mu})/2$.
+Let $f_{\epsilon,\mu}$ a Lipschitz positive function with support include in $C_{\epsilon,\mu}$, $\int f_{\epsilon,\mu} > Vol(C_{\epsilon,\mu})/2$.
 
-We take also $g$ a positive $C^1$ function with support in $D$, $K_1= \int g$ and $\| g \|_{C^1}= K_2$.
+We take also $g$ a positive Lipschitz function with support in $D$, $K_1= \int g$ and $\| g \|_{Lip}= K_2$.
 So we have:\[
 |\int f_{\epsilon,\mu} \circ E_{t_{lim}} g - \int f_{\epsilon,\mu} \int g |=K_1 \int f_{\epsilon,\mu}
 \]
 
 If we have exponential mixing, we would have two constants $\tau'$ and $K_3$ such that \[
 \frac{Vol(C_{\epsilon,\mu})}{2}K_1 \leq K_1 \int f_{\epsilon,\mu}
-< K_2 K_3 \| f_{\epsilon,\mu} \|_{C^1} e^{-\epsilon \frac{2+C}{\mu \tau'}}
+< K_2 K_3 \| f_{\epsilon,\mu} \|_{Lip} e^{-\epsilon \frac{2+C}{\mu \tau'}}
 \]
 
 Or more simply \begin{equation}
-Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{C^1} e^{-\frac{\epsilon}{\mu \tau}}
+Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{Lip} e^{-\frac{\epsilon}{\mu \tau}}
 \label{equ}
 \end{equation}
 
-We should now understand the volume of $C_{\epsilon,\mu}$ and the $C^1$ norm of $f_{\epsilon,\mu}$. Note that we are interested in an upper bound of the norm and a lower bound of the volume.
 
-We could choose $f_{\epsilon,\mu}$ such that
-$B \frac{1}{\epsilon \mu} \leq \| f_{\epsilon,\mu} \|_{C^1} \leq A \frac{1}{\epsilon \mu}$.
-
-To estimate the volume of $C_{\epsilon,\mu}$, and following \cite{fu2015cusp}, we use the fact that the measure $\nu$ restricted to the space of unit-length measured laminations is equal to the Thurston volume of the unit ball.
-
-If $\alpha$ is another simple closed curve which intersect only one time $\gamma$, $\lambda$ is determined by $(i(\gamma,\lambda),i(\alpha,\lambda))$. We will note $r(\theta)$ the reciprocal length of the measure lamination $(cos(\theta),sin(\theta))$.
-So we want to integrate \[
-Int(\mu)=\int_{-\mu}^{\mu} \int_0^{r(\theta)}r dr d \theta
-\]
-
-We will note $R(l)=2ln(coth(l/4))=2ln(\frac{e^{l/2}+1}{e^{l/2}-1})$. Then as in \cite{fu2015cusp}, we have that:
-
-\begin{note}
-The length of the measured lamination $(cos(\theta),sin(\theta))$ is bounded between
-
-$max(R(\epsilon)|cos(\theta)|,\epsilon |sin(\theta)|)$ and $(R(\epsilon)|cos \theta | + \epsilon |sin \theta |)$.
-\end{note}
-
-So if $\mu \leq Arctan(\frac{R(\epsilon)}{\epsilon})$, $\frac{1}{R(\epsilon)|cos(\theta)|} \leq r(\theta)$ and \[
-\frac{1}{2 R(\epsilon)^2} \int_{-\mu}^\mu \frac{1}{cos(\theta)^2}=\frac{tan(\mu)}{R(\epsilon)^2}\leq Int
-\]
-
-\begin{note}
-The condition $\mu \leq Arctan(\frac{R(\epsilon)}{\epsilon})$ is not a problem since $R(\epsilon)$ and $\frac{1}{\epsilon}$ are two decreasing functions we have \[
-Arctan(\frac{R(ln(3+2 \sqrt{2}))}{ln(3+2 \sqrt{2})}) \leq Arctan(\frac{R(\epsilon)}{\epsilon})
-\]
-And this will not influence asymptotic considerations.
-\end{note}
-
-Then \[
- \frac{\epsilon}{2} \frac{\epsilon /2}{1+e^{\epsilon /2}} \frac{tan(\mu)}{R(\epsilon /2)^2}
- \leq \int_{\epsilon/2}^\epsilon \frac{l}{1+e^l}\frac{ tan(\mu)}{R(l)^2}dl
- \leq  \int_{\epsilon/2}^\epsilon \frac{l}{1+e^l} Int(\mu) dl
-\]
-as the function $l \mapsto \frac{l}{1+e^l}\frac{1}{R(l)^2}$ is increasing near $0$. Making other small simplification we find: \[
-C \mu \frac{\epsilon^2}{log(\epsilon)^2} \leq  Vol(C_{\epsilon,\mu})
-\]
-
-Injecting the volume and the norm in \ref{equ} we find,
- \[
-\frac{\mu \epsilon^2}{log(\epsilon)^2} \leq K \frac{1}{\epsilon \mu} e^{\frac{- \epsilon}{\mu \tau'}}
-\]
-with two synthetic constants $K$ and $\tau'$.
-
-Then we choose $\mu = \epsilon^2$, we have \[
-\epsilon^7 \leq K log(\epsilon )^2 e^{- \frac{1}{\epsilon \tau'}}
-\]
-for every $\epsilon$ small enough which is impossible.
-
-
-Now let try to put a polynomial decay rate. We change the inequality \ref{equ} in
+We can also make the hypothesis that the earthquake flow has a polynomial decay rate. We change the inequality \ref{equ} in
 \begin{equation}
-Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{C^1} (\frac{\epsilon}{\mu})^{-\gamma}
+Vol(C_{\epsilon,\mu}) < K' \| f_{\epsilon,\mu} \|_{Lip} (\frac{\epsilon}{\mu})^{-\gamma}
 \label{poly}
 \end{equation}
 Where $\gamma \in \mathbb{R^{+*}}$.
 
-And injecting the estimates of the volume and the norm in \ref{poly}, we have:
+We should now understand the volume of $C_{\epsilon,\mu}$ and the Lipschitz norm of $f_{\epsilon,\mu}$. Note that we are interested in an upper bound of the norm and a lower bound of the volume.
 
-\[
-\mu \frac{\epsilon^2}{log(\epsilon)^2}  < K \frac{1}{\epsilon \mu} (\frac{\epsilon}{\mu })^{- \gamma}
+
+One can choose $f_{\epsilon,\mu}$ to be a piecewise product of linear as follow:\[
+f_{\epsilon,\mu}=g_{\epsilon}h_{\epsilon}j_{\epsilon,\mu}
 \]
- Taking $\mu=\epsilon^{\delta}$ with $\delta$  a positive constant we find: \[
-\frac{\epsilon^{2+\delta}}{log(\epsilon)^2} \leq \frac{K}{\epsilon^{1+\delta}}(\epsilon^{1-\delta})^{-\gamma}
-\]
-Hence \[
-\epsilon^{3+\gamma+2 \delta - \gamma \delta} \leq K log(1/ \epsilon)^2
-\]
-This can only happen if $3+\gamma+2 \delta - \gamma \delta \geq 0$ and so $\gamma \leq 2$.
+With
+$$
+g_{\epsilon} = \left \{
+\begin{array}{lll}
+0 & \text{if} & l_{sys} \notin [\epsilon/2;\epsilon]\\
+1 & \text{if} & l_{sys} \in [\frac{4 \epsilon}{6};\frac{5 \epsilon}{6}]\\
+\frac{6}{\epsilon}(l_{sys}(X)-\frac{\epsilon}{2}) & \text{if} & l_{sys} \in [\frac{\epsilon}{2};\frac{4 \epsilon}{6}]\\
+\frac{-6}{\epsilon}(l_{sys}(X)-\epsilon) & \text{if} & l_{sys} \in [\frac{5 \epsilon}{6};\epsilon]
+\end{array}
+\right .
+$$
+
+$$
+h_{\lambda} = \left \{
+\begin{array}{lll}
+0 & \text{if} & l_{\lambda}(X) > 1\\
+1 & \text{if} & l_{\lambda}(X) \leq \frac{1}{2}\\
+-2(l_\lambda(X -1)) & \text{if} & l_{\lambda}(X) \in [\frac{1}{2};1]
+\end{array}
+\right .
+$$
+
+$$
+j_{\epsilon,\mu} = \left \{
+\begin{array}{lll}
+0 & \text{if} & i(\lambda,\gamma) > \mu\\
+1 & \text{if} & i(\lambda,\gamma) \leq \mu/2\\
+\frac{-2 }{\mu}(i(\lambda,\gamma)-\mu) & \text{if} & i(\lambda,\gamma) \in [\mu/2; \mu]
+\end{array}
+\right .
+$$
+
+Then we need to calculate the different Lipschitz norms of this function.
+
+To estimate the volume of $C_{\epsilon,\mu}$, and following \cite{fu2015cusp}, we use the fact that the measure $\nu$ restricted to the space of unit-length measured laminations is equal to the Thurston volume of the unit ball.
+
+When we will have the two previous estimation, we would know if the earthquake flow has exponential mixing rate or polynomial rate and a bound of the degree of the polynome in the last case. 
