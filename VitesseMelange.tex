@@ -1,27 +1,60 @@
 \subsection{Mixing properties of the geodesic and horocyclic flows}
 
+The geodesic flow and the horocyclic flow can act in two situation. In the first one they belong to the action of $SL_2(\mathbb{R})$ on the quotient of the upper half plane by a lattice seen as a finite volume hyperbolic surface. A second manner is in the Teichmuller space and then in the modular space of a given surface.
+
 We will first give the behaviours of two flows we described before.
 
 \begin{thm}
-The ergodic flow and the horocycle flow are mixing.
+The geodesic flow and the horocycle flow are mixing as seen as flow on surface and on modular space.
 \end{thm}
+We will just give the proof in the case of a finite volume hyperbolic surface.
 The detail of the proof can be found in this course \cite{Mcmullen1998HyperbolicM}.
 
 \begin{proof}
-The proof will be in four step, first we will show that the ergodic flow is ergodic, the horocyclic flow is ergodic, the ergodic flow is mixing, finally the horocycle flow is mixing.\\
+The proof will be in four step, first we will show that the geodesic flow is ergodic, the horocyclic flow is ergodic, the geodesic flow is mixing, finally the horocycle flow is mixing.\\
 
 
 \emph{Geodesic flow is ergodic}
 
-We will look at the time average of a function $f \in L^2$ which is continuous and compactly support. It will be sufficient since this space is dense. \[
+The following proof is called the Hopf's argument \cite{Hopf1939} and is now common in ergodic theorie.
+
+We will look at the time average of a function $f \in L^2$ which is continuous and compactly support. We will study only the case where the surface is compact, hence $f$ is uniformusly continous. It will be sufficient since this space is dense. We note : \[
 F(x) = lim_{T \to \infty} \frac{1}{T} \int_0^T f(g_t x)dt
 \]
 We want to show that $F$ is almost everywhere constant.
 
-Since $F$ depend only of the geodesic $\gamma(a,b)$ which pass at $x$, if $a,b \in S_\infty$ are the two endpoints of $\gamma$, we have $F(a,b)$.
-Then as two geodesic with the same forward endpoint are asymptotic, $F$ is a quantity that depend only of asymptotic average, we have that $F$ do not depend of $a$.
-But we can reverse the argument to show that if we consider the inverse geodesic, $t \to \infty$, we have that $F$ is also independent of $b$. Hence $F$ is constant almost everywhere and the geodesic flow is ergodic.\\
 
+For a point $x$ in the surface, $F(x)$ is constant a.e. on the stable foliation $W^s(x)$ since if two geodesic with the same forward endpoint are asymptotic we can control the difference of the integral with the uniformous continuity of $f$. By the same argument $F$ is constant a.e. on the unstable foliation $W^u(x)$. By Birkhoff's theorem this two constant are the same almost everywhere.
+
+We should now add that the measure is absolutly continous with respect to the stable foliation and the unstable foliation, the definition is given below.
+\begin{dfnt}
+Let $X$ be a metric space, $ f_t $ of borelian flow whith an invariant borelian measure $\mu$ of finite mass.
+ We say that $\mu$ is \emph{absolutly continous with respect to the stable foliation and unstable foliation} if for every $v \in X $ we can find a open neighborhood $U$ of $v$, a $\delta>0$ and a homeomerphism  $\phi:\mathbb{R} \times \mathbb{R} \to U $ such has for every $(x,y) \in \mathbb{R} \times \mathbb{R} $,
+\begin{enumerate}
+\item $\phi(\{x\}\times \mathbb{R}) \subset W^s(\phi(x,y))$
+\item $\phi( \mathbb{R} \times \{y\}) \subset f_{|]-\delta,\delta[} W^u(\phi(x,y))$
+\item $\phi^* (\mu_{|U})$ is equivalent to a product measure
+\end{enumerate}
+\end{dfnt}
+
+We will admit that this is the case in our situation. Moreover we can conclude with the following lemma.
+
+\begin{lem}
+Let $(X,\mathcal{T},\mu)$ and $(Y,\mathcal{S},\nu)$ be two probability spaces and $f: X \times Y \to \mathbb{R}$ a function in $L^2$. We suppose that there is $\phi_1:X \to \mathbb{R}$ and $\phi_2:Y \to \mathbb{R}$ two measurable function, such has for $Z \subset X \times Y$ a subset of full $\mu \otimes \nu$ we have :
+\[
+\forall (x,y) \in Z , f(x,y)=\phi_1 (x) , f(x,y)=\phi_2 (y)
+\]
+Then $f$ is constant almost everywhere.
+\end{lem}
+
+\begin{proof}
+According to Fubini's theorem, there is $Y_0 \subset Y$ of full measure and $x_0 \in X$ such has $\{ x_0 \} \times Y_0 \subset Z$. For all $(x,y) \in Z \cap (X \times Y_0)$, the point $(x_0,y)$ is in $Z$ so we have \[
+\phi_1(x_0)=f(x_0,y)=\phi_2(y)=f(x,y)
+\]
+which finish the lemma.
+\end{proof}
+
+Putting the pieces together we have that the geodesic flow is ergodic.\\
 
 \emph{Ergodicity of the horocycle flow}
 
