@@ -117,19 +117,19 @@ The Earthquake flow is also mixing with respect to the Liouville measure.
 \end{cor}
 
 \begin{proof}
-With Mirzharani's conjugacy, the earthquake flow is conjugated to the horocycle flow which is mixing. This property is carried over.
+With Mirzakhani's conjugacy, the earthquake flow is conjugated to the horocycle flow which is mixing. This property is carried over.
 \end{proof}
 
 \subsection{Rate of mixing of this flows}
 
-Then we want to know at which rate the mixing of the geodesic and horocyclic flow happens. Ratner shows in 1986 \cite{ratner_1987} that the geodesic flow is exponentially mixing and the horocyclic flow has a polynomial rate of mixing. She used representation theory.
+Then we want to know at which rate the mixing of the geodesic and horocyclic flow happens. Ratner showed in 1986 \cite{ratner_1987} that the geodesic flow is exponentially mixing and the horocyclic flow has a polynomial rate of mixing. She used representation theory.
 
 We will first give some definitions before getting to the main theorem.
 
 \begin{dfnt}
 Let $H$ be a  complex separable Hilbert space, $U(H)$ the group of all unitary transformation of $H$ onto itself, $G$ a Lie group and $T: G \to U(H)$ a unitary representation. We note $T(g)=T_g \in U(H)$.
 
-An element $v \in H$ is called \emph{a $C^k-vector$} for $T$, $k=0,1,...,\infty$ if $g \mapsto T_g(v)$ is a $C^k$-map from $G$ to the Hilbert space.
+An element $v \in H$ is called \emph{a $C^k$-vector} for $T$, $k=0,1,...,\infty$ if $g \mapsto T_g(v)$ is a $C^k$-map from $G$ to the Hilbert space. We will note $K(T,p)$ the space of $C^k$-vector
 \end{dfnt}
 
 \begin{rmq}
@@ -142,7 +142,7 @@ L_X v =lim_{t \to 0} \frac{T(exp tX)v-v}{t}
 \]
 \end{dfnt}
 
-Now if $\Gamma$ is a fushian group, $SL_2(\mathbb{R})$ act on the hyperbolic surface with its measure $(X,\mu)$ as seen as $\mathbb{H}/ \Gamma$.
+Now if $\Gamma$ is a Fushian group, $SL_2(\mathbb{R})$ actss on the hyperbolic surface with its measure $(X,\mu)$ as seen as $\mathbb{H}/ \Gamma$.
 Then it will also act by a representation $\rho$ on $L^2_0(X,\mu)$ the space of zero average function on the surface.
 
 We want to study the decorrelation induced by some subgroup of $SL_2(\mathbb{R})$. It will link with the following quantity.
@@ -186,10 +186,10 @@ The representation $\rho$ is isolated from the trivial representation if and onl
 
 
 So in our case, the Lie algebra of $SL(2,\mathbb{R})$, is the vector space of $2 \times 2$ matrix with zero trace. A basis for this space is \[
-W=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, Q=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, V=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
+W=\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}, Z=\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}, V=\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}
 \]
 Which gives the Casimir operator on $C^2$ vectors of $SL(2,\mathbb{R})$, \[
-\Omega_T = (L_v^2+L_Q^2-L_W^2)/4
+\Omega_T = (L_v^2+L_Z^2-L_W^2)/4
 \]
 
 On a irreducible part of $T$, $\Omega_T$ is a scalar multiple of the identity, i.e. \[
